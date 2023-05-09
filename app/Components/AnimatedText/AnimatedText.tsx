@@ -1,58 +1,57 @@
 "use client"
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from "react"
 
 import styles from "./AnimatedText.module.css"
 
 interface AnimatedTextProps {
-  in_textStart: string,
-  in_textEnd: string,
-  in_startDelay?: number
+  inTextStart: string,
+  inTextEnd: string,
+  inStartDelay?: number
 }
 
-export default function AnimatedText({in_textStart, in_textEnd, in_startDelay = 0}: AnimatedTextProps) {
+export default function AnimatedText({inTextStart, inTextEnd, inStartDelay = 0}: AnimatedTextProps): JSX.Element {
 
-  const textRef = useRef<HTMLHeadingElement>(null);
+	const textRef = useRef<HTMLHeadingElement>(null);
 
-  const [text, setText] = useState("");
-  const delay = 150;
+	const [text, setText] = useState("");
+	const delay = 150;
 
-  const textLetters = in_textStart;
+	const textLetters = inTextStart;
 
-  const textAnimation = () => {
-    textLetters.split("").forEach((letter, idx) => {
-      setTimeout(() => {
-        setText((prev) => prev + letter)
-      }, delay * idx)
-    })
-  }
+	const textAnimation = (): void => {
+		textLetters.split("").forEach((letter, idx) => {
+			setTimeout(() => {
+				setText((prev) => prev + letter)
+			}, delay * idx)
+		})
+	}
 
-  useEffect(() => {
-    const timer_1 = setTimeout(() => {
-      textAnimation()
-    }, in_startDelay)
-    const timer_2 = setTimeout(() => {
-      textRef.current!.classList.add("rotate")
-    }, (delay * textLetters.length) + in_startDelay)
+	useEffect(() => {
+		const timer1 = setTimeout(() => {
+			textAnimation()
+		}, inStartDelay)
+		const timer2 = setTimeout(() => {
+			textRef.current?.classList.add("rotate")
+		}, (delay * textLetters.length) + inStartDelay)
 
-    return () => {
-      clearTimeout(timer_1)
-      clearTimeout(timer_2)
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [in_startDelay, textLetters])
+		return () => {
+			clearTimeout(timer1)
+			clearTimeout(timer2)
+		}
+	}, [inStartDelay, textLetters])
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setText(in_textEnd)
-      textRef.current!.classList.add("rotateFR")
-      textRef.current!.classList.remove("rotate")
-    }, delay * textLetters.length + 500 + in_startDelay)
-    return () => clearTimeout(timer)
-  }, [in_startDelay, in_textEnd, textLetters])
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setText(inTextEnd)
+			textRef.current?.classList.add("rotateFR")
+			textRef.current?.classList.remove("rotate")
+		}, delay * textLetters.length + 500 + inStartDelay)
+		return () => { clearTimeout(timer); }
+	}, [inStartDelay, inTextEnd, textLetters])
 
-  return (
-    <>
-      <h2 className={styles["h-40"]} ref={textRef}>{text}</h2>
-    </>
-  )
+	return (
+		<>
+			<h2 className={styles["h-40"]} ref={textRef}>{text}</h2>
+		</>
+	)
 }

@@ -1,0 +1,5 @@
+.h-40 {
+  display: block;
+  height: 40px;
+  color: var(--title--color);
+}

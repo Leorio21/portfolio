@@ -1,14 +1,21 @@
 import React from "react"
 // import Image from 'next/image'
-import styles from "./page.module.css"
+import css from "./page.module.css"
 import AnimatedText from "./Components/AnimatedText/AnimatedText"
+import NavBar from "./Components/NavBar/NavBar"
 
 export default function Home(): JSX.Element {
 
 	return (
-		<div className={styles.container}>
-			<AnimatedText inTextStart={"$" + "{name}"} inTextEnd="Jérôme LEFEUVRE" />
-			<AnimatedText inTextStart={"$" + "{profession}"} inTextEnd="Développeur Web" inStartDelay={500} />
-		</div>
+		<>
+			<div className={css.container}>
+				<div className={css.presentation}>
+					<p>----- Site en construction -----</p>
+					<AnimatedText inTextStart={"$" + "{name}"} inTextEnd="Jérôme LEFEUVRE" />
+					<AnimatedText inTextStart={"$" + "{profession}"} inTextEnd="Développeur Web" inStartDelay={500} />
+				</div>
+				<NavBar />
+			</div>
+		</>
 	)
 }

@@ -1,0 +1,39 @@
+.red {
+  --button-border-color: red;
+  --button-border-color-active: rgb(192, 0, 0);
+  --button-text-color: black;
+  --button-text-color-active: white;
+  --button-background: darkcyan;
+  --button-background-active: darkslategray;
+}
+
+.green {
+  --button-border-color: rgb(20, 170, 20);
+  --button-border-color-active: rgb(5, 136, 5);
+  --button-text-color: black;
+  --button-text-color-active: white;
+  --button-background: rgb(255, 187, 0);
+  --button-background-active: rgb(255, 123, 0);
+}
+
+.button {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--button-text-color);
+  border: 3px outset var(--button-border-color);
+  border-radius: 20px;
+  background-color: var(--button-background);
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active {
+  border: 5px inset var(--button-border-color-active);
+  background-color: var(--button-background-active);
+  color: var(--button-text-color-active);
+}

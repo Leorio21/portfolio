@@ -5,10 +5,10 @@ import Button from "../Button/Button"
 export default function NavBar(): JSX.Element {
 	return (
 		<div className={css.container}>
-			<Button inName={"Accueil"} inColor={"red"} />
-			<Button inName={"Portfolio"} inColor={"green"} />
-			<Button inName={"Expérience"} inColor={"red"} />
-			<Button inName={"Contact"} inColor={"red"} />
+			<Button inName={"Accueil"} inColor={"blue"} />
+			<Button inName={"Portfolio"} inColor={"yellow"} />
+			<Button inName={"Expérience"} inColor={"purple"} />
+			<Button inName={"Contact"} inColor={"green"} />
 		</div>
 	)
 }

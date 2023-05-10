@@ -1,5 +1,11 @@
 import React from "react"
+import { Lobster } from "next/font/google"
 import "./globals.css"
+
+const lobster = Lobster({
+	weight: "400",
+	subsets: ["latin"]
+})
 
 export const metadata = {
 	title: "Jérôme LEFEUVRE - dev Web",
@@ -13,7 +19,7 @@ export default function RootLayout({
 }): JSX.Element {
 	return (
 		<html lang="fr">
-			<body>{children}</body>
+			<body className={lobster.className}>{children}</body>
 		</html>
 	)
 }

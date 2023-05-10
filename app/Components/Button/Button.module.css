@@ -7,7 +7,7 @@
   color: var(--button-text-color);
   border: 3px outset var(--button-border-color);
   border-radius: 20px;
-  background-color: var(--button-background);
+  background: radial-gradient(at 0% 10%, rgba(255, 255, 255, 1) 1px, var(--button-background));
 }
 
 .button:hover {
@@ -16,7 +16,7 @@
 
 .button:active {
   border: 5px inset var(--button-border-color);
-  background-color: var(--button-background-active);
+  background: radial-gradient(at 0% 10%, rgba(0, 0, 0, 1) 1px, var(--button-background-active));
   color: var(--button-text-color-active);
   transform: translate(3px, 3px);
 }

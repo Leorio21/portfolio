@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react"
 
-import styles from "./AnimatedText.module.css"
+import css from "./AnimatedText.module.css"
 
 interface AnimatedTextProps {
   inTextStart: string,
@@ -31,7 +31,7 @@ export default function AnimatedText({inTextStart, inTextEnd, inStartDelay = 0}:
 			textAnimation()
 		}, inStartDelay)
 		const timer2 = setTimeout(() => {
-			textRef.current?.classList.add("rotate")
+			textRef.current?.classList.add(css.rotate)
 		}, (delay * textLetters.length) + inStartDelay)
 
 		return () => {
@@ -43,15 +43,15 @@ export default function AnimatedText({inTextStart, inTextEnd, inStartDelay = 0}:
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setText(inTextEnd)
-			textRef.current?.classList.add("rotateFR")
-			textRef.current?.classList.remove("rotate")
+			textRef.current?.classList.remove(css.rotate)
+			textRef.current?.classList.add(css.rotateFR)
 		}, delay * textLetters.length + 500 + inStartDelay)
 		return () => { clearTimeout(timer); }
 	}, [inStartDelay, inTextEnd, textLetters])
 
 	return (
 		<>
-			<h2 className={styles["h-40"]} ref={textRef}>{text}</h2>
+			<h2 className={css["h-40"]} ref={textRef}>{text}</h2>
 		</>
 	)
 }

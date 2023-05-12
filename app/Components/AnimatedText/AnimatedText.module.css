@@ -1,6 +1,7 @@
-.h-40 {
+.h-60 {
   display: block;
-  height: 40px;
+  height: 60px;
+  font-size: 25px;
   color: var(--title--color);
 }
 

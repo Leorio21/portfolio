@@ -7,45 +7,6 @@ export default function Home(): JSX.Element {
 		<>
 			<AnimatedText inTextStart={"$" + "{name}"} inTextEnd="Jérôme Lefeuvre" />
 			<AnimatedText inTextStart={"$" + "{profession}"} inTextEnd="Développeur Web" inStartDelay={500} />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			<br /><br /><br /><br /><br /><br /><br /><br /><br />1<br />
 		</>
 	)
 }

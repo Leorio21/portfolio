@@ -4,12 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--button-text-color);
-  border: 3px outset var(--button-border-color);
+  color: var(--button--text--color);
+  border: 3px outset var(--button--border--color);
   border-radius: 20px;
-  box-shadow: 0px 0px 15px var(--button-border-color);
+  box-shadow: 0px 0px 15px var(--button--border--color);
   font-size: 23px;
-  background: radial-gradient(at 0% 10%, rgba(255, 255, 255, 1) 1px, var(--button-background));
+  background: radial-gradient(at 0% 10%, rgba(255, 255, 255, 1) 1px, var(--button--background));
 }
 
 .button:hover {
@@ -17,42 +17,64 @@
 }
 
 .button:active {
-  border: 5px inset var(--button-border-color);
-  box-shadow: 0px 0px 15px var(--button-background-active);
-  background: radial-gradient(at 0% 10%, rgba(0, 0, 0, 1) 1px, var(--button-background-active));
-  color: var(--button-text-color-active);
+  border: 5px inset var(--button--border--color);
+  box-shadow: 0px 0px 15px var(--button--background--active);
+  background: radial-gradient(at 0% 10%, rgba(0, 0, 0, 1) 1px, var(--button--background--active));
+  color: var(--button--text--color--active);
   transform: translate(3px, 3px);
 }
 
 /* Variables couleurs */
 .blue {
-  --button-border-color: rgb(52, 123, 255);
-  --button-text-color: var(--text--color--dark);
-  --button-text-color-active: var(--text--color--light);
-  --button-background: rgb(43, 99, 204);
-  --button-background-active: rgb(28, 76, 165);
+  --button--border--color: rgb(52, 123, 255);
+  --button--text--color: var(--text--color--dark);
+  --button--text--color--active: var(--text--color--light);
+  --button--background: rgb(43, 99, 204);
+  --button--background--active: rgb(28, 76, 165);
 }
 
 .yellow {
-  --button-border-color: rgb(255, 187, 0);
-  --button-text-color: var(--text--color--dark);
-  --button-text-color-active: var(--text--color--light);
-  --button-background: rgb(223, 170, 25);
-  --button-background-active: rgb(184, 140, 21);
+  --button--border--color: rgb(255, 187, 0);
+  --button--text--color: var(--text--color--dark);
+  --button--text--color--active: var(--text--color--light);
+  --button--background: rgb(223, 170, 25);
+  --button--background--active: rgb(184, 140, 21);
 }
 
 .purple {
-  --button-border-color: rgb(228, 82, 228);
-  --button-text-color: var(--text--color--dark);
-  --button-text-color-active: var(--text--color--light);
-  --button-background: rgb(184, 89, 184);
-  --button-background-active: rgb(124, 49, 124);
+  --button--border--color: rgb(228, 82, 228);
+  --button--text--color: var(--text--color--dark);
+  --button--text--color--active: var(--text--color--light);
+  --button--background: rgb(184, 89, 184);
+  --button--background--active: rgb(124, 49, 124);
 }
 
 .green {
-  --button-border-color: rgb(93, 236, 112);
-  --button-text-color: var(--text--color--dark);
-  --button-text-color-active: var(--text--color--light);
-  --button-background: rgb(77, 199, 93);
-  --button-background-active: rgb(57, 151, 69);
+  --button--border--color: rgb(93, 236, 112);
+  --button--text--color: var(--text--color--dark);
+  --button--text--color--active: var(--text--color--light);
+  --button--background: rgb(77, 199, 93);
+  --button--background--active: rgb(57, 151, 69);
+}
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    background: none;
+  }
+
+  .blue {
+    --button--text--color: var(--button--border--color);
+  }
+
+  .yellow {
+    --button--text--color: var(--button--border--color);
+  }
+
+  .purple {
+    --button--text--color: var(--button--border--color);
+  }
+
+  .green {
+    --button--text--color: var(--button--border--color);
+  }
 }

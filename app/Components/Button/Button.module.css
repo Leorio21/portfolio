@@ -27,7 +27,7 @@
 /* Variables couleurs */
 .blue {
   --button--border--color: rgb(52, 123, 255);
-  --button--text--color: var(--text--color--dark);
+  --button--text--color: var(--text--color);
   --button--text--color--active: var(--text--color--light);
   --button--background: rgb(43, 99, 204);
   --button--background--active: rgb(28, 76, 165);
@@ -35,7 +35,7 @@
 
 .yellow {
   --button--border--color: rgb(255, 187, 0);
-  --button--text--color: var(--text--color--dark);
+  --button--text--color: var(--text--color);
   --button--text--color--active: var(--text--color--light);
   --button--background: rgb(223, 170, 25);
   --button--background--active: rgb(184, 140, 21);
@@ -43,7 +43,7 @@
 
 .purple {
   --button--border--color: rgb(228, 82, 228);
-  --button--text--color: var(--text--color--dark);
+  --button--text--color: var(--text--color);
   --button--text--color--active: var(--text--color--light);
   --button--background: rgb(184, 89, 184);
   --button--background--active: rgb(124, 49, 124);
@@ -51,7 +51,7 @@
 
 .green {
   --button--border--color: rgb(93, 236, 112);
-  --button--text--color: var(--text--color--dark);
+  --button--text--color: var(--text--color);
   --button--text--color--active: var(--text--color--light);
   --button--background: rgb(77, 199, 93);
   --button--background--active: rgb(57, 151, 69);
@@ -62,19 +62,4 @@
     background: none;
   }
 
-  .blue {
-    --button--text--color: var(--button--border--color);
-  }
-
-  .yellow {
-    --button--text--color: var(--button--border--color);
-  }
-
-  .purple {
-    --button--text--color: var(--button--border--color);
-  }
-
-  .green {
-    --button--text--color: var(--button--border--color);
-  }
 }

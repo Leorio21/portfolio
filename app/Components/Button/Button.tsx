@@ -8,9 +8,9 @@ interface ButtonProps {
 	inLinkRef?: string;
 }
 
-export default function Button({inName, inColor, inLinkRef = "./"}: ButtonProps): JSX.Element {
+export default function Button({inName, inColor, inLinkRef = "/"}: ButtonProps): JSX.Element {
 	return (
-		<Link href={inLinkRef}>
+		<Link href={inLinkRef} replace>
 			<div className={`${css.button} ${css[inColor]}`}>{inName}</div>
 		</Link>
 	)

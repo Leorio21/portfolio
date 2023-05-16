@@ -6,7 +6,7 @@ export default function NavBar(): JSX.Element {
 	return (
 		<div className={css.container}>
 			<Button inName={"Accueil"} inColor={"blue"} inLinkRef="/"/>
-			<Button inName={"Portfolio"} inColor={"yellow"} inLinkRef="/portfolio"/>
+			<Button inName={"Projets"} inColor={"yellow"} inLinkRef="/projets"/>
 			<Button inName={"Expériences"} inColor={"purple"} inLinkRef="/experiences"/>
 			<Button inName={"Contact"} inColor={"green"} inLinkRef="/contact"/>
 		</div>

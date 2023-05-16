@@ -1,0 +1,56 @@
+.container {
+  position: relative;
+  height: 450px;
+  width: 300px;
+  border: ridge 3px var(--text--color)
+}
+
+.headband {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-size: 30px;
+  color: var(--text--color--light);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.title {
+  height: 50px;
+  bottom: -53px;
+}
+
+.dotsScroll {
+  height: 30px;
+  bottom: 0px;
+}
+
+.dotScroll {
+  width: 50px;
+  cursor: pointer;
+}
+
+.selected {
+  fill: red;
+}
+
+.arrow {
+  position: absolute;
+  fill: black;
+  width: 40px;
+  height: 40px;
+  top: calc(50% - 20px);
+  background-color: rgba(255, 255, 255, 0.247);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.leftArrow {
+  left: -20px;
+}
+
+.rightArrow {
+  right: -20px;
+}

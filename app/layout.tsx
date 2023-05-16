@@ -25,7 +25,7 @@ export default function RootLayout({
 			<body>
 				<div className={css.container}>
 					<NavBar />
-					<p>----- Site en construction -----</p>
+					{/* <p>----- Site en construction -----</p> */}
 					<div className={css.content}>
 						{children}
 					</div>

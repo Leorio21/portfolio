@@ -4,17 +4,17 @@ export const useFetch = <T,>(
 	file: string
 ): {
   isLoading: boolean;
-  response?: T;
+  response?: T | undefined;
   error: string | undefined;
   fetchFunction: (data?: string) => Promise<void>;
 } => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | undefined>(undefined);
-	const [response, setResponse] = useState<T>();
+	const [response, setResponse] = useState<T | undefined>(undefined);
 
 	const fetchFunction = async (data?: string): Promise<void> => {
 		setIsLoading(true);
-		setError("");
+		setError(undefined);
 		try {
 			const result = await (await fetch(file)).json();
 			setResponse(result);

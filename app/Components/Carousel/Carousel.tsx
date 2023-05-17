@@ -55,7 +55,6 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 
 	useEffect((): void => {
 		if (response !== undefined) {
-			console.log(response)
 			response.forEach((el) => {addImg(el.miniature)})
 		}
 	}, [response])
@@ -68,7 +67,7 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 		return(<></>)
 	}
 
-	if (imgBdd.length !== 0) {
+	if (imgBdd[0] !== undefined) {
 		return (
 			<div className={css.container}>
 				{inTitle && <div className={`${css.headband} ${css.title}`}>

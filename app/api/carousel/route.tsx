@@ -4,10 +4,10 @@ import path from "node:path";
 
 export  async function GET(): Promise<any> {
 
-	const imgBdd: string[] = []
+	const imgBdd: string[] = [];
 	let data: string[] = [];
 	try {
-		data = await readdir("../images/carousel");
+		data = await readdir("./app/api/images/carousel");
 	}
 	catch (error) {
 		console.log(error)

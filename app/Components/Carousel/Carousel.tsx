@@ -19,33 +19,25 @@ interface ProjetsProps {
 export default function Carousel({ inTitle = false, inDotScroll = false, inButtons = false}: CarouselProps): JSX.Element {
 
 	const [index, setIndex] = useState(0);
-	const [imgBdd, setImgBdd] = useState<string[]>([]);
+	const [nbProject, setNbProject] = useState(0);
 
 	const { response, error, isLoading } = useFetch<ProjetsProps[]>("./projets.json");
 
-	const addImg = (newImg: string): void => {
-		setImgBdd((prev) => {
-			const newBddImg = [...prev]
-			newBddImg.push(newImg)
-			return newBddImg
-		})
-	}
-
 	const nextSlide = (): void => {
-		setIndex((prev) => {
-			if (prev === imgBdd.length - 1) {
+		setIndex((current) => {
+			if (current === nbProject) {
 				return 0;
 			}
-			return prev + 1;
+			return current + 1;
 		})
 	}
 
 	const previousSlide = (): void => {
-		setIndex((prev) => {
-			if (prev === 0) {
-				return imgBdd.length - 1;
+		setIndex((current) => {
+			if (current === 0) {
+				return nbProject;
 			}
-			return prev - 1;
+			return current - 1;
 		})
 	}
 
@@ -55,7 +47,7 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 
 	useEffect((): void => {
 		if (response !== undefined) {
-			response.forEach((el) => {addImg(el.miniature)})
+			setNbProject(response.length)
 		}
 	}, [response])
 
@@ -67,15 +59,15 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 		return(<></>)
 	}
 
-	if (imgBdd[0] !== undefined) {
+	if (response !== undefined) {
 		return (
 			<div className={css.container}>
 				{inTitle && <div className={`${css.headband} ${css.title}`}>
-					
+					{response[index].title}
 				</div>}
 				<Image 
-					src = {`/carousel/${imgBdd[index]}`}
-					blurDataURL = {`/carousel/${imgBdd[index]}`}
+					src = {`/carousel/${response[index].miniature}`}
+					blurDataURL = {`/carousel/${response[index].miniature}`}
 					alt = "Capture d'ecran du projet"
 					priority = {true}
 					style={{objectFit: "cover"}}
@@ -84,7 +76,7 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 				/>
 
 				{inDotScroll && <div className={`${css.headband} ${css.dotsScroll}`}>
-					{imgBdd.map((slide, idx) => {
+					{response.map((el, idx) => {
 						return <MinusSmallIcon className={idx === index ? `${css.dotScroll} ${css.selected}` : css.dotScroll} key={idx} onClick={() => {goToSlide(idx)}}/>
 					})}
 				</div>}

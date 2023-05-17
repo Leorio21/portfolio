@@ -7,7 +7,7 @@ export  async function GET(): Promise<any> {
 	const imgBdd: string[] = [];
 	let data: string[] = [];
 	try {
-		data = await readdir("public/Carousel");
+		data = await readdir("public/carousel");
 	}
 	catch (error) {
 		console.log(error)

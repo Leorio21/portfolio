@@ -25,7 +25,7 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 
 	const nextSlide = (): void => {
 		setIndex((current) => {
-			if (current === nbProject) {
+			if (current === nbProject - 1) {
 				return 0;
 			}
 			return current + 1;
@@ -35,7 +35,7 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 	const previousSlide = (): void => {
 		setIndex((current) => {
 			if (current === 0) {
-				return nbProject;
+				return nbProject - 1;
 			}
 			return current - 1;
 		})

@@ -17,5 +17,5 @@ export  async function GET(): Promise<any> {
 		data.forEach((file) => path.extname(file) === ".webp" && imgBdd.push(file))
 	}
 	
-	return NextResponse.json({data: imgBdd})
+	return NextResponse.json({data: imgBdd, test: "1"})
 }

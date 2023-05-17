@@ -56,8 +56,8 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 				{imgBdd[index].split(".")[0]}
 			</div>}
 			<Image 
-				src = {`/Carousel/${imgBdd[index]}`}
-				blurDataURL = {`/Carousel/${imgBdd[index]}`}
+				src = {`/carousel/${imgBdd[index]}`}
+				blurDataURL = {`/carousel/${imgBdd[index]}`}
 				alt = "mon text alt ici"
 				priority = {true}
 				style={{objectFit: "cover"}}

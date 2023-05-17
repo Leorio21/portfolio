@@ -7,7 +7,7 @@ export  async function GET(): Promise<any> {
 	const imgBdd: string[] = [];
 	let data: string[] = [];
 	try {
-		data = await readdir(path.join(__dirname, "/images/carousel"));
+		data = await readdir("public/carousel");
 	}
 	catch (error) {
 		console.log(error)
@@ -17,5 +17,5 @@ export  async function GET(): Promise<any> {
 		data.forEach((file) => path.extname(file) === ".webp" && imgBdd.push(file))
 	}
 	
-	return NextResponse.json({data: imgBdd, path: path.join(__dirname, "/images/carousel")})
+	return NextResponse.json({data: imgBdd})
 }

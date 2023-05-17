@@ -26,7 +26,7 @@ export default function AnimatedText({inTextStart, inTextEnd, inStartDelay = 0}:
 		})
 	}
 
-	useEffect(() => {
+	useEffect((): () => void => {
 		const timer1 = setTimeout(() => {
 			textAnimation()
 		}, inStartDelay)
@@ -40,7 +40,7 @@ export default function AnimatedText({inTextStart, inTextEnd, inStartDelay = 0}:
 		}
 	}, [inStartDelay, textLetters])
 
-	useEffect(() => {
+	useEffect((): () => void => {
 		const timer = setTimeout(() => {
 			setText(inTextEnd)
 			textRef.current?.classList.remove(css.rotate)

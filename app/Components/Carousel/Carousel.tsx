@@ -58,7 +58,7 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 			<Image 
 				src = {`/carousel/${imgBdd[index]}`}
 				blurDataURL = {`/carousel/${imgBdd[index]}`}
-				alt = "mon text alt ici"
+				alt = "Capture d'ecran du projet"
 				priority = {true}
 				style={{objectFit: "cover"}}
 				sizes="50vw"

@@ -2,19 +2,18 @@
   --bg--img--home: url("../public/fond_code_ligth.webp");
   --title--color: black;
   --text--color: black;
-  --text--color--light: white;
+  --text--color--light: rgb(221, 221, 221);
   --text--color--dark: black;
+  --background--color: rgb(221, 221, 221);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg--img--home: url("../public/fond_code_dark.webp");
-    --title--color: red;
-    --text--color: white;
+    --text--color: rgb(221, 221, 221);
+    --backgroung--color: rgb(36, 36, 36);
   }
 }
-
-
 
 * {
   box-sizing: border-box;

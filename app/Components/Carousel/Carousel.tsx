@@ -4,22 +4,25 @@ import { useFetch } from "../../Hooks/Fetch/useFetch";
 import css from "./Carousel.module.css";
 import Image from "next/image";
 import { ChevronRightIcon, ChevronLeftIcon, MinusSmallIcon } from "@heroicons/react/20/solid";
+import { useModal } from "@/app/Hooks/Modal/useModal";
 
 interface CarouselProps {
-	inTitle?: boolean;
-	inDotScroll?: boolean;
-	inButtons?: boolean;
+	inTitle?: boolean,
+	inDotScroll?: boolean,
+	inButtons?: boolean,
 }
 
 interface ProjetsProps {
 	miniature: string,
-  title: string
+  title: string,
+	description: string,
 }
 
 export default function Carousel({ inTitle = false, inDotScroll = false, inButtons = false}: CarouselProps): JSX.Element {
 
 	const [index, setIndex] = useState(0);
 	const [nbProject, setNbProject] = useState(0);
+	const { ModalContainer, setModal } = useModal();
 
 	const { response, error, isLoading } = useFetch<ProjetsProps[]>("./projets.json");
 
@@ -41,52 +44,60 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 		})
 	}
 
+	const moreInfos = (desc: string): void => {
+		setModal(desc);
+	}
+
 	const goToSlide = (idx: number): void => {
 		setIndex(idx);
 	}
 
 	useEffect((): void => {
 		if (response !== undefined) {
-			setNbProject(response.length)
+			setNbProject(response.length);
 		}
 	}, [response])
 
 	if (isLoading) {
-		return(<></>)
+		return(<></>);
 	}
 
 	if (error !== undefined) {
-		return(<></>)
+		return(<></>);
 	}
 
 	if (response !== undefined) {
 		return (
-			<div className={css.container}>
-				{inTitle && <div className={`${css.headband} ${css.title}`}>
-					{response[index].title}
-				</div>}
-				<Image 
-					src = {`/carousel/${response[index].miniature}`}
-					blurDataURL = {`/carousel/${response[index].miniature}`}
-					alt = "Capture d'ecran du projet"
-					priority = {true}
-					style={{objectFit: "cover"}}
-					sizes="50vw"
-					fill
-				/>
+			<>
+				<div className={css.container}>
+					{inTitle && <div className={`${css.headband} ${css.title}`}>
+						{response[index].title}
+					</div>}
+					<Image 
+						src = {`/carousel/${response[index].miniature}`}
+						blurDataURL = {`/carousel/${response[index].miniature}`}
+						alt = "Capture d'ecran du projet"
+						priority = {true}
+						style={{objectFit: "cover"}}
+						sizes="50vw"
+						onClick={() => {moreInfos(response[index].description)}}
+						fill
+					/>
 
-				{inDotScroll && <div className={`${css.headband} ${css.dotsScroll}`}>
-					{response.map((el, idx) => {
-						return <MinusSmallIcon className={idx === index ? `${css.dotScroll} ${css.selected}` : css.dotScroll} key={idx} onClick={() => {goToSlide(idx)}}/>
-					})}
-				</div>}
+					{inDotScroll && <div className={`${css.headband} ${css.dotsScroll}`}>
+						{response.map((el, idx) => {
+							return <MinusSmallIcon className={idx === index ? `${css.dotScroll} ${css.selected}` : css.dotScroll} key={idx} onClick={() => {goToSlide(idx)}}/>
+						})}
+					</div>}
 
-				{inButtons && 
-				<>
-					<ChevronLeftIcon  className={`${css.leftArrow} ${css.arrow}`} onClick={previousSlide}/>
-					<ChevronRightIcon className={`${css.rightArrow} ${css.arrow}`} onClick={nextSlide}/>
-				</>}
-			</div>
+					{inButtons && 
+					<>
+						<ChevronLeftIcon  className={`${css.leftArrow} ${css.arrow}`} onClick={previousSlide}/>
+						<ChevronRightIcon className={`${css.rightArrow} ${css.arrow}`} onClick={nextSlide}/>
+					</>}
+				</div>
+				<ModalContainer />
+			</>
 		)
 	}
 

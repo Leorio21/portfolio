@@ -1,10 +1,12 @@
 [
   {
     "miniature": "Groupomania.webp",
-    "title": "Groupomania"
+    "title": "Groupomania",
+    "description": "Dernier Projet de la formation OpenClassRoom, il fallait réaliser un reseau social d'entreprise. Les fonctionnalités obligatoires étaient de pouvoir créer un compte, poster du texte et/ou des images, commenter et/ou liker les posts, modifier ou supprimer ses posts/likes/commentaires\n\nTechologies utilisées:\n\n- React(ViteJS)\n- NodeJS\n- TypeScript\n- Express\n- MySql\n- Prisma"
   },
   {
     "miniature": "Portfolio.webp",
-    "title": "Portfolio"
+    "title": "Portfolio",
+    "description": "Ce portfolio\n\nTechologies utilisées:\n\n- NextJS\n- TypeScript\n"
   }
 ]

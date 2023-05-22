@@ -83,6 +83,7 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 						onClick={() => {moreInfos(response[index].description)}}
 						fill
 					/>
+					<span className={css.infos} onClick={() => {moreInfos(response[index].description)}}>Plus d&apos;infos</span>
 
 					{inDotScroll && <div className={`${css.headband} ${css.dotsScroll}`}>
 						{response.map((el, idx) => {

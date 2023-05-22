@@ -1,4 +1,25 @@
 .container {
+  --modal--text--color: black;
+  --modal--background--color: rgb(221, 221, 221);
+}
+
+.container::backdrop {
+  --modal--backdrop--color: rgba(255, 255, 255, 0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    --modal--text--color: rgb(221, 221, 221);;
+    --modal--background--color: rgb(36, 36, 36);
+    --modal--backdrop--color: rgba(0, 0, 0, 0.7);
+  }
+
+  .container::backdrop {
+    --modal--backdrop--color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.container {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -6,14 +27,14 @@
   white-space: pre-line;
   transform: translate(-50%, -50%);
   border-radius: 15px;
-  border-color: var(--text--color);
+  border: 2px solid var(--modal--text--color);
   padding: 15px;
-  background: var(--backgroung--color);
-  color: var(--text--color);
+  background: var(--modal--background--color);
+  color: var(--modal--text--color);
 }
 
 .container::backdrop {
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--modal--backdrop--color);
 }
 
 .closeButton {

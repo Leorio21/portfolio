@@ -1,6 +1,6 @@
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import React, { useEffect, useRef } from "react";
-import style from "./Modal.module.css";
+import css from "./Modal.module.css";
 
 interface ModalProps {
   modalContent: string | JSX.Element;
@@ -21,9 +21,9 @@ const Modal = ({ modalContent, setModal }: ModalProps): React.ReactElement => {
 	}, [modalContent]);
 
 	return (
-		<dialog className={style.container} ref={refDialog}>
+		<dialog className={css.container} ref={refDialog}>
 			{modalContent}
-			<div className={style.closeButton} onClick={onCloseHandle}>
+			<div className={css.closeButton} onClick={onCloseHandle}>
 				<XMarkIcon height={30} />
 			</div>
 		</dialog>

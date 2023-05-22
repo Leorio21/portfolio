@@ -1,9 +1,7 @@
 :root {
   --bg--img--home: url("../public/fond_code_ligth.webp");
-  --title--color: black;
-  --text--color: black;
   --text--color--light: rgb(221, 221, 221);
-  --text--color--dark: black;
+  --text--color: black;
   --background--color: rgb(221, 221, 221);
 }
 
@@ -11,7 +9,7 @@
   :root {
     --bg--img--home: url("../public/fond_code_dark.webp");
     --text--color: rgb(221, 221, 221);
-    --backgroung--color: rgb(36, 36, 36);
+    --background--color: rgb(36, 36, 36);
   }
 }
 

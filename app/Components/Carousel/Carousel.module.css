@@ -1,3 +1,13 @@
+.headband {
+  --background--color--headband: rgb(221, 221, 221);
+}
+
+@media (prefers-color-scheme: dark) {
+  .headband {
+    --background--color--headband: rgba(0, 0, 0, 0.9);
+  }
+}
+
 .container {
   position: relative;
   height: 450px;
@@ -13,8 +23,8 @@
   align-items: center;
   z-index: 1;
   font-size: 30px;
-  color: var(--text--color--light);
-  background-color: rgba(0, 0, 0, 0.9);
+  color: var(--text--color);
+  background-color: var(--background--color--headband);
 }
 
 .title {
@@ -53,4 +63,14 @@
 
 .rightArrow {
   right: -20px;
+}
+
+.infos {
+  position: absolute;
+  cursor: pointer;
+  color: rgb(12, 152, 218);
+  bottom: 40px;
+  width: 70px;
+  left: calc(50% - 35px);
+  z-index: 1;
 }

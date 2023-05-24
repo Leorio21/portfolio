@@ -1,6 +1,5 @@
 :root {
   --bg--img--home: url("../public/fond_code_ligth.webp");
-  --text--color--light: rgb(221, 221, 221);
   --text--color: black;
   --background--color: rgb(221, 221, 221);
 }

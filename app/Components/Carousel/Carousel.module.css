@@ -9,10 +9,17 @@
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel {
   position: relative;
   height: 450px;
   width: 300px;
-  border: ridge 3px var(--text--color)
+  border: ridge 2px var(--text--color);
+  overflow: hidden;
 }
 
 .headband {
@@ -28,8 +35,14 @@
 }
 
 .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px;
-  bottom: -53px;
+  font-size: 30px;
+  color: var(--text--color--light);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .dotsScroll {
@@ -48,29 +61,43 @@
 
 .arrow {
   position: absolute;
-  fill: black;
-  width: 40px;
-  height: 40px;
+  fill: white;
+  width: 30px;
+  height: 30px;
   top: calc(50% - 20px);
-  background-color: rgba(255, 255, 255, 0.247);
-  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.438);
+  border-radius: 25%;
   cursor: pointer;
 }
 
 .leftArrow {
-  left: -20px;
+  left: -5px;
 }
 
 .rightArrow {
-  right: -20px;
+  right: -5px;
 }
 
-.infos {
-  position: absolute;
-  cursor: pointer;
-  color: rgb(12, 152, 218);
-  bottom: 40px;
-  width: 70px;
-  left: calc(50% - 35px);
-  z-index: 1;
+.images {
+  width: 900px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  transform: translateX(-302px);
+}
+
+.image {
+  position: relative;
+  width: 300px;
+  height: 100%;
+}
+
+.animFF {
+  transform: translateX(-604px);
+  transition: all 0.3s ease-in-out;
+}
+
+.animFR {
+  transform: unset;
+  transition: all 0.3s ease-in-out;
 }

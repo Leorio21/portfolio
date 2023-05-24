@@ -8,5 +8,10 @@
     "miniature": "Portfolio.webp",
     "title": "Portfolio",
     "description": "Ce portfolio\n\nTechologies utilisées:\n\n- NextJS\n- TypeScript\n"
+  },
+  {
+    "miniature": "desastres.png",
+    "title": "Désastres",
+    "description": "Désastres description"
   }
 ]

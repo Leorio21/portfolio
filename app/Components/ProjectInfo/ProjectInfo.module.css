@@ -2,15 +2,15 @@
   min-width: 300px;
   width: 95%;
   border-radius: 10px;
-  height: 260px;
+  height: 280px;
   background-color: var(--background--color);
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 30px 200px 30px;
+  grid-template-rows: 30px 200px 50px;
   grid-template-areas: 
   "title title"
   "description description"
-  "btn_code btn_site";
+  "lien_code lien_site";
 }
 
 .miniature {
@@ -20,6 +20,9 @@
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  border: 2px outset var(--text--color);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .description {
@@ -38,13 +41,38 @@
   font-size: 30px;
 }
 
+.lien {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lien a {
+  border: 2px solid var(--text--color);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.lien a:hover{
+  border-color: red;
+  color: red;
+}
+
+.code {
+  grid-area: lien_code;
+}
+
+.site {
+  grid-area: lien_site;
+}
+
 @media (width > 480px) {
   .container {
     grid-template-columns: 26% 37% 37%;
     grid-template-areas: 
       "miniature title title"
       "miniature description description"
-      "miniature btn_code btn_site";
+      "miniature lien_code lien_site";
   }
 
   .miniature {

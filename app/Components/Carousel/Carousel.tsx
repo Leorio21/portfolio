@@ -104,7 +104,7 @@ export default function Carousel({ inData, inTitle = false, inDotScroll = false,
 		<div className={css.container}>
 			<div className={css.carousel}>
 				<div id="imagesContainer" className={css.images}>
-					<div className={css.image}>
+					<figure className={css.image}>
 						<Image 
 							src = {`/carousel/${inData[prevIdx].miniature}`}
 							blurDataURL = {`/carousel/${inData[prevIdx].miniature}`}
@@ -114,8 +114,8 @@ export default function Carousel({ inData, inTitle = false, inDotScroll = false,
 							sizes="50vw"
 							fill
 						/>
-					</div>
-					<div className={css.image}>
+					</figure>
+					<figure className={css.image}>
 						<a href={`#${inData[index].id}`}>
 							<Image 
 								src = {`/carousel/${inData[index].miniature}`}
@@ -127,8 +127,8 @@ export default function Carousel({ inData, inTitle = false, inDotScroll = false,
 								fill
 							/>
 						</a>
-					</div>
-					<div className={css.image}>
+					</figure>
+					<figure className={css.image}>
 						<Image 
 							src = {`/carousel/${inData[nextIdx].miniature}`}
 							blurDataURL = {`/carousel/${inData[nextIdx].miniature}`}
@@ -138,7 +138,7 @@ export default function Carousel({ inData, inTitle = false, inDotScroll = false,
 							sizes="50vw"
 							fill
 						/>
-					</div>
+					</figure>
 				</div>
 				{inDotScroll && <div className={`${css.headband} ${css.dotsScroll}`}>
 					{inData.map((el, idx) => {
@@ -151,9 +151,9 @@ export default function Carousel({ inData, inTitle = false, inDotScroll = false,
 						<ChevronRightIcon className={`${css.rightArrow} ${css.arrow}`} onClick={nextSlide}/>
 					</>}
 			</div>
-			{inTitle && <div className={css.title}>
+			{inTitle && <h1 className={css.title}>
 				{inData[index].title}
-			</div>}
+			</h1>}
 		</div>
 	)
 

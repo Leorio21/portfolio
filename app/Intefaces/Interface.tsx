@@ -3,4 +3,6 @@ export interface IntProjectData {
   miniature: string,
   title: string,
 	description: string,
+  code: string,
+  site: string,
 }

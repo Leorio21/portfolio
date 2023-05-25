@@ -4,7 +4,7 @@
     "miniature": "Groupomania.webp",
     "title": "Groupomania",
     "description": "Dernier Projet de la formation OpenClassRoom: créer un reseau social d'entreprise. TS permet de typer les variables et d'éviter certaines erreurs lors du developpement. L'ORM Prisma pour la gestion de la BDD de manière sécurisée\n\nTechologies utilisées:\n\n- React(ViteJS) - NodeJS - TypeScript - Express - MySql - Prisma",
-    "code": "",
+    "code": "https://github.com/Leorio21/Oc-P7-Groupomania",
     "site": ""
   },
   {
@@ -12,7 +12,7 @@
     "miniature": "Portfolio.webp",
     "title": "Portfolio",
     "description": "Ce portfolio\nPremier projet pour découvrir NextJS\n\nTechologies utilisées:\n\n- NextJS - TypeScript",
-    "code": "",
-    "site": ""
+    "code": "https://github.com/Leorio21/portfolio",
+    "site": "https://portfolio-leorio21.vercel.app/"
   }
 ]

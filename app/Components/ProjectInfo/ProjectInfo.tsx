@@ -9,8 +9,8 @@ interface ProjectInfoProps {
 
 export default function ProjectInfo({inPproject}: ProjectInfoProps): JSX.Element {
 	return (
-		<div className={style.container} id={inPproject.id}>
-			<div className={style.miniature}>
+		<article className={style.container} id={inPproject.id}>
+			<figure className={style.miniature}>
 				<Image 
 					src = {`/carousel/${inPproject.miniature}`}
 					blurDataURL = {`/carousel/${inPproject.miniature}`}
@@ -20,13 +20,15 @@ export default function ProjectInfo({inPproject}: ProjectInfoProps): JSX.Element
 					sizes="20vw"
 					fill
 				/>
-			</div>
-			<div className={style.title}>
+			</figure>
+			<h2 className={style.title}>
 				{inPproject.title}
-			</div>
-			<div className={style.description}>
+			</h2>
+			<p className={style.description}>
 				{inPproject.description}
-			</div>
-		</div>
+			</p>
+			{inPproject.code !== "" && <p className={`${style.code} ${style.lien}`}><a href={inPproject.code} target="_blank" rel="noreferrer">Voir le code</a></p>}
+			{inPproject.site !== "" && <p className={`${style.site} ${style.lien}`}><a href={inPproject.site} target="_blank" rel="noreferrer">Voir le site</a></p>}
+		</article>
 	)
 }

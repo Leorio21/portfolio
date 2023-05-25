@@ -27,7 +27,13 @@ export default function Portfolio(): JSX.Element {
 		return (
 			<div className={style.container}>
 				Cliquez sur l&apos;image pour plus de détails
-				<Carousel inData={response} inTitle={true} inDotScroll={true} inButtons={true} inAutoPlay={true} inAutoPlayDelay={2000} />
+				<Carousel
+					inData={response}
+					inTitle={true}
+					inDotScroll={true}
+					inButtons={true}
+					inAutoPlay={true}
+				/>
 				<div className={style.listing}>
 					{listing}
 				</div>

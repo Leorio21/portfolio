@@ -23,7 +23,7 @@ interface CarouselProps {
 	- Refactoring
 */
 
-export default function Carousel({ inData, inTitle = false, inDotScroll = false, inButtons = false, inAutoPlay = false, inAutoPlayDelay = 1000}: CarouselProps): JSX.Element {
+export default function Carousel({ inData, inTitle = false, inDotScroll = false, inButtons = false, inAutoPlay = false, inAutoPlayDelay = 3000}: CarouselProps): JSX.Element {
 
 	const [index, setIndex] = useState(0);
 	const [nextIdx, setNextIdx] = useState(0);

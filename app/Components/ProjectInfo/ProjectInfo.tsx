@@ -17,7 +17,7 @@ export default function ProjectInfo({inPproject}: ProjectInfoProps): JSX.Element
 					alt = "Capture d'ecran du projet"
 					priority = {true}
 					style={{objectFit: "cover"}}
-					sizes="20vw"
+					sizes="25vw"
 					fill
 				/>
 			</figure>

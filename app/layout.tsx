@@ -1,5 +1,5 @@
 import React from "react"
-import { Lobster } from "next/font/google"
+import { Lobster, Courgette } from "next/font/google"
 import "./globals.css"
 import css from "./layout.module.css"
 
@@ -7,7 +7,14 @@ import NavBar from "./Components/NavBar/NavBar"
 
 const lobster = Lobster({
 	weight: "400",
-	subsets: ["latin"]
+	subsets: ["latin"],
+	variable: "--font--lobster",
+});
+
+const courgette = Courgette({
+	weight: "400",
+	subsets: ["latin"],
+	variable: "--font--courgette",
 })
 
 export const metadata = {
@@ -21,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }): JSX.Element {
 	return (
-		<html lang="fr" className={lobster.className}>
+		<html lang="fr" className={`${lobster.variable} ${courgette.variable}`}>
 			<body>
 				<div className={css.container}>
 					<NavBar />

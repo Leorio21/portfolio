@@ -54,8 +54,9 @@
 }
 
 .lien a:hover{
-  border-color: red;
-  color: red;
+  border-color: var(--background--color);
+  color: var(--background--color);
+  background-color: var(--text--color);
 }
 
 .code {

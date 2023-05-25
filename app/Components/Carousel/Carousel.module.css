@@ -1,9 +1,9 @@
-.headband {
+.headband, .title {
   --background--color--headband: rgb(221, 221, 221);
 }
 
 @media (prefers-color-scheme: dark) {
-  .headband {
+  .headband, .title {
     --background--color--headband: rgba(0, 0, 0, 0.9);
   }
 }
@@ -43,7 +43,7 @@
   height: 50px;
   font-size: 30px;
   color: var(--text--color--light);
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: var(--background--color--headband);
 }
 
 .dotsScroll {
@@ -80,6 +80,7 @@
 }
 
 .images {
+  position: relative;
   width: 900px;
   height: 100%;
   display: flex;
@@ -99,6 +100,6 @@
 }
 
 .animFR {
-  transform: unset;
+  transform: translateX(-2px);
   transition: all 0.3s ease-in-out;
 }

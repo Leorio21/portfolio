@@ -11,7 +11,7 @@
     "id": "project2",
     "miniature": "Portfolio.webp",
     "title": "Portfolio",
-    "description": "Ce portfolio\nPremier projet pour découvrir NextJS\n\nTechologies utilisées:\n\n- NextJS - TypeScript",
+    "description": "Ce portfolio\nPremier projet pour découvrir NextJS et affichage dark/Ligth mode en fonction des préférences utilisateur\n\nTechologies utilisées:\n\n- NextJS - TypeScript",
     "code": "https://github.com/Leorio21/portfolio",
     "site": "https://portfolio-leorio21.vercel.app/"
   }

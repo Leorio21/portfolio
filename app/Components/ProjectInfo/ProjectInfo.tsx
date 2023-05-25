@@ -4,16 +4,16 @@ import Image from "next/image";
 import { type IntProjectData } from "@/app/Intefaces/Interface"
 
 interface ProjectInfoProps {
-  project: IntProjectData,
+  inPproject: IntProjectData,
 }
 
-export default function ProjectInfo({project}: ProjectInfoProps): JSX.Element {
+export default function ProjectInfo({inPproject}: ProjectInfoProps): JSX.Element {
 	return (
-		<div className={style.container} id={project.id}>
+		<div className={style.container} id={inPproject.id}>
 			<div className={style.miniature}>
 				<Image 
-					src = {`/carousel/${project.miniature}`}
-					blurDataURL = {`/carousel/${project.miniature}`}
+					src = {`/carousel/${inPproject.miniature}`}
+					blurDataURL = {`/carousel/${inPproject.miniature}`}
 					alt = "Capture d'ecran du projet"
 					priority = {true}
 					style={{objectFit: "cover"}}
@@ -22,10 +22,10 @@ export default function ProjectInfo({project}: ProjectInfoProps): JSX.Element {
 				/>
 			</div>
 			<div className={style.title}>
-				{project.title}
+				{inPproject.title}
 			</div>
 			<div className={style.description}>
-				{project.description}
+				{inPproject.description}
 			</div>
 		</div>
 	)

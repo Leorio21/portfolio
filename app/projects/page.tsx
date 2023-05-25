@@ -21,7 +21,7 @@ export default function Portfolio(): JSX.Element {
 	if (response !== undefined) {
 
 		const listing = response.map((project) => {
-			return <ProjectInfo project={project} key={project.id} />
+			return <ProjectInfo inPproject={project} key={project.id} />
 		})
 
 		return (

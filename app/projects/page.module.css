@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  padding: 20px 10px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.listing {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  column-gap: 50px;
+  row-gap: 50px;
+}

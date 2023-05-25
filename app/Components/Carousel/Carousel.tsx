@@ -1,11 +1,16 @@
 "use client"
 import React, { useEffect, useState } from "react";
-import { useFetch } from "../../Hooks/Fetch/useFetch";
 import css from "./Carousel.module.css";
 import Image from "next/image";
 import { ChevronRightIcon, ChevronLeftIcon, MinusSmallIcon } from "@heroicons/react/20/solid";
-
+interface IntInData {
+	id: string,
+	miniature: string,
+	title: string,
+	[propName: string]: any,
+}
 interface CarouselProps {
+	inData: IntInData[],
 	inTitle?: boolean,
 	inDotScroll?: boolean,
 	inButtons?: boolean,
@@ -13,26 +18,18 @@ interface CarouselProps {
 	inAutoPlayDelay?: number,
 }
 
-interface ProjetsProps {
-	miniature: string,
-  title: string,
-	description: string,
-}
-
 /* TODO :
-	- AutoPlay.
 	- Scroll au doigt.
+	- Refactoring
 */
 
-export default function Carousel({ inTitle = false, inDotScroll = false, inButtons = false, inAutoPlay = false, inAutoPlayDelay = 1000}: CarouselProps): JSX.Element {
+export default function Carousel({ inData, inTitle = false, inDotScroll = false, inButtons = false, inAutoPlay = false, inAutoPlayDelay = 1000}: CarouselProps): JSX.Element {
 
 	const [index, setIndex] = useState(0);
 	const [nextIdx, setNextIdx] = useState(0);
 	const [prevIdx, setPrevIdx] = useState(0);
 	const [nbProject, setNbProject] = useState(0);
 	const animationDelay = 300;
-
-	const { response, error, isLoading } = useFetch<ProjetsProps[]>("./projets.json");
 
 	const nextSlide = (): void => {
 		document.getElementById("imagesContainer")?.classList.add(css.animFF);
@@ -99,78 +96,65 @@ export default function Carousel({ inTitle = false, inDotScroll = false, inButto
 	}, [index, nbProject])
 
 	useEffect((): void => {
-		if (response !== undefined) {
-			setNbProject(response.length)
-			setIndex(0);
-		}
-	}, [response])
+		setNbProject(inData.length)
+		setIndex(0);
+	}, [inData])
 
-	if (isLoading) {
-		return(<></>);
-	}
-
-	if (error !== undefined) {
-		return(<></>);
-	}
-
-	if (response !== undefined) {
-		return (
-			<div className={css.container}>
-				<div className={css.carousel}>
-					<div id="imagesContainer" className={css.images}>
-						<div className={css.image}>
-							<Image 
-								src = {`/carousel/${response[prevIdx].miniature}`}
-								blurDataURL = {`/carousel/${response[prevIdx].miniature}`}
-								alt = "Capture d'ecran du projet"
-								priority = {true}
-								style={{objectFit: "cover"}}
-								sizes="50vw"
-								fill
-							/>
-						</div>
-						<div className={css.image}>
-							<Image 
-								src = {`/carousel/${response[index].miniature}`}
-								blurDataURL = {`/carousel/${response[index].miniature}`}
-								alt = "Capture d'ecran du projet"
-								priority = {true}
-								style={{objectFit: "cover"}}
-								sizes="50vw"
-								fill
-							/>
-						</div>
-						<div className={css.image}>
-							<Image 
-								src = {`/carousel/${response[nextIdx].miniature}`}
-								blurDataURL = {`/carousel/${response[nextIdx].miniature}`}
-								alt = "Capture d'ecran du projet"
-								priority = {true}
-								style={{objectFit: "cover"}}
-								sizes="50vw"
-								fill
-							/>
-						</div>
+	return (
+		<div className={css.container}>
+			<div className={css.carousel}>
+				<div id="imagesContainer" className={css.images}>
+					<div className={css.image}>
+						<Image 
+							src = {`/carousel/${inData[prevIdx].miniature}`}
+							blurDataURL = {`/carousel/${inData[prevIdx].miniature}`}
+							alt = "Capture d'ecran du projet"
+							priority = {true}
+							style={{objectFit: "cover"}}
+							sizes="50vw"
+							fill
+						/>
 					</div>
-					{inDotScroll && <div className={`${css.headband} ${css.dotsScroll}`}>
-						{response.map((el, idx) => {
-							return <MinusSmallIcon className={idx === index ? `${css.dotScroll} ${css.selected}` : css.dotScroll} key={idx} onClick={() => {goToSlide(idx)}}/>
-						})}
-					</div>}
-					{inButtons && 
+					<div className={css.image}>
+						<a href={`#${inData[index].id}`}>
+							<Image 
+								src = {`/carousel/${inData[index].miniature}`}
+								blurDataURL = {`/carousel/${inData[index].miniature}`}
+								alt = "Capture d'ecran du projet"
+								priority = {true}
+								style={{objectFit: "cover"}}
+								sizes="50vw"
+								fill
+							/>
+						</a>
+					</div>
+					<div className={css.image}>
+						<Image 
+							src = {`/carousel/${inData[nextIdx].miniature}`}
+							blurDataURL = {`/carousel/${inData[nextIdx].miniature}`}
+							alt = "Capture d'ecran du projet"
+							priority = {true}
+							style={{objectFit: "cover"}}
+							sizes="50vw"
+							fill
+						/>
+					</div>
+				</div>
+				{inDotScroll && <div className={`${css.headband} ${css.dotsScroll}`}>
+					{inData.map((el, idx) => {
+						return <MinusSmallIcon className={idx === index ? `${css.dotScroll} ${css.selected}` : css.dotScroll} key={idx} onClick={() => {goToSlide(idx)}}/>
+					})}
+				</div>}
+				{inButtons && 
 					<>
 						<ChevronLeftIcon  className={`${css.leftArrow} ${css.arrow}`} onClick={previousSlide}/>
 						<ChevronRightIcon className={`${css.rightArrow} ${css.arrow}`} onClick={nextSlide}/>
 					</>}
-				</div>
-				{inTitle && <div className={css.title}>
-					{response[index].title}
-				</div>}
 			</div>
-		)
-	}
-
-	return (
-		<></>
+			{inTitle && <div className={css.title}>
+				{inData[index].title}
+			</div>}
+		</div>
 	)
+
 }

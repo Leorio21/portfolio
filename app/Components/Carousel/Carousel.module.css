@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px;
 }
 
 .carousel {
@@ -93,7 +94,7 @@
 }
 
 .animFF {
-  transform: translateX(-604px);
+  transform: translateX(-602px);
   transition: all 0.3s ease-in-out;
 }
 

@@ -21,8 +21,16 @@
 
 html,
 body {
+  width: 100%;
   max-width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: var(--bg--img--home);
+  background-repeat: repeat;
 }
 
 a {

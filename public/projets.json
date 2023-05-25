@@ -1,17 +1,18 @@
 [
   {
+    "id": "project1",
     "miniature": "Groupomania.webp",
     "title": "Groupomania",
-    "description": "Dernier Projet de la formation OpenClassRoom, il fallait réaliser un reseau social d'entreprise. Les fonctionnalités obligatoires étaient de pouvoir créer un compte, poster du texte et/ou une image, commenter et/ou liker les posts, modifier ou supprimer ses posts/likes/commentaires\n\nTechologies utilisées:\n\n- React(ViteJS)\n- NodeJS\n- TypeScript\n- Express\n- MySql\n- Prisma"
+    "description": "Dernier Projet de la formation OpenClassRoom: créer un reseau social d'entreprise. TS permet typer les variables et d'éviter certaines erreurs lors du developpement. L'ORM Prisma pour le gestion de la BDD de manière sécurisée\n\nTechologies utilisées:\n\n- React(ViteJS) - NodeJS - TypeScript - Express - MySql - Prisma",
+    "code": "",
+    "site": ""
   },
   {
+    "id": "project2",
     "miniature": "Portfolio.webp",
     "title": "Portfolio",
-    "description": "Ce portfolio\n\nTechologies utilisées:\n\n- NextJS\n- TypeScript\n"
-  },
-  {
-    "miniature": "desastres.png",
-    "title": "Désastres",
-    "description": "Désastres description"
+    "description": "Ce portfolio\nPremier projet pour découvrir NextJS\n\nTechologies utilisées:\n\n- NextJS - TypeScript",
+    "code": "",
+    "site": ""
   }
 ]

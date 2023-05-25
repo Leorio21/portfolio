@@ -3,14 +3,14 @@
   width: 95%;
   border-radius: 10px;
   height: 260px;
-  display: grid;
   background-color: var(--background--color);
-  grid-template-columns: 26% 37% 37%;
+  display: grid;
+  grid-template-columns: 50% 50%;
   grid-template-rows: 30px 200px 30px;
   grid-template-areas: 
-    "miniature title title"
-    "miniature description description"
-    "miniature btn_code btn_site";
+  "title title"
+  "description description"
+  "btn_code btn_site";
 }
 
 .miniature {
@@ -19,6 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
 }
 
 .description {
@@ -37,16 +38,16 @@
   font-size: 30px;
 }
 
-@media (width < 480px) {
+@media (width > 480px) {
   .container {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 26% 37% 37%;
     grid-template-areas: 
-    "title title"
-    "description description"
-    "btn_code btn_site";
+      "miniature title title"
+      "miniature description description"
+      "miniature btn_code btn_site";
   }
 
   .miniature {
-    visibility: hidden;
+    visibility: unset;
   }
 }

@@ -3,7 +3,7 @@
     "id": "project1",
     "miniature": "Groupomania.webp",
     "title": "Groupomania",
-    "description": "Dernier Projet de la formation OpenClassRoom: créer un reseau social d'entreprise. TS permet typer les variables et d'éviter certaines erreurs lors du developpement. L'ORM Prisma pour le gestion de la BDD de manière sécurisée\n\nTechologies utilisées:\n\n- React(ViteJS) - NodeJS - TypeScript - Express - MySql - Prisma",
+    "description": "Dernier Projet de la formation OpenClassRoom: créer un reseau social d'entreprise. TS permet de typer les variables et d'éviter certaines erreurs lors du developpement. L'ORM Prisma pour la gestion de la BDD de manière sécurisée\n\nTechologies utilisées:\n\n- React(ViteJS) - NodeJS - TypeScript - Express - MySql - Prisma",
     "code": "",
     "site": ""
   },

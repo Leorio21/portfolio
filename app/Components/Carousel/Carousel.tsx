@@ -29,7 +29,7 @@ export default function Carousel({ inData, inTitle = false, inDotScroll = false,
 	const [nextIdx, setNextIdx] = useState(0);
 	const [prevIdx, setPrevIdx] = useState(0);
 	const [nbProject, setNbProject] = useState(0);
-	const animationDelay = 300;
+	const animationDelay = 500;
 
 	const nextSlide = (): void => {
 		document.getElementById("imagesContainer")?.classList.add(css.animFF);

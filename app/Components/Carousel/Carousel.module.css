@@ -96,10 +96,10 @@
 
 .animFF {
   transform: translateX(-602px);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .animFR {
   transform: translateX(-2px);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }

@@ -9,7 +9,7 @@ interface ProjectInfoProps {
 
 export default function ProjectInfo({inPproject}: ProjectInfoProps): JSX.Element {
 	return (
-		<article className={style.container} id={inPproject.id}>
+		<article className={style.container} id={inPproject.title}>
 			<figure className={style.miniature}>
 				<Image 
 					src = {`/carousel/${inPproject.miniature}`}

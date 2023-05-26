@@ -1,7 +1,6 @@
 export interface IntProjectData {
-  id: string,
-  miniature: string,
   title: string,
+  miniature: string,
 	description: string,
   code: string,
   site: string,

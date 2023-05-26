@@ -4,7 +4,6 @@ import css from "./Carousel.module.css";
 import Image from "next/image";
 import { ChevronRightIcon, ChevronLeftIcon, MinusSmallIcon } from "@heroicons/react/20/solid";
 interface IntInData {
-	id: string,
 	miniature: string,
 	title: string,
 	[propName: string]: any,
@@ -116,7 +115,7 @@ export default function Carousel({ inData, inTitle = false, inDotScroll = false,
 						/>
 					</figure>
 					<figure className={css.image}>
-						<a href={`#${inData[index].id}`}>
+						<a href={`#${inData[index].title}`}>
 							<Image 
 								src = {`/carousel/${inData[index].miniature}`}
 								blurDataURL = {`/carousel/${inData[index].miniature}`}

@@ -2,6 +2,7 @@
 import React from "react"
 import style from "./page.module.css"
 import Carousel from "../Components/Carousel/Carousel"
+import { PlayIcon } from "@heroicons/react/20/solid"
 import { useFetch } from "../Hooks/Fetch/useFetch";
 import { type IntProjectData } from "../Intefaces/Interface";
 import ProjectInfo from "../Components/ProjectInfo/ProjectInfo";
@@ -36,6 +37,11 @@ export default function Portfolio(): JSX.Element {
 				/>
 				<div className={style.listing}>
 					{listing}
+				</div>
+				<div className={style.backToUp}>
+					<a href="#">
+						<PlayIcon className={style.backToUpIcon} />
+					</a>
 				</div>
 			</div>
 		)

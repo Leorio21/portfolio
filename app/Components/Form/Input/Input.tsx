@@ -5,9 +5,10 @@ interface InputProps {
 	id: string,
 	type: string,
 	label: string,
+	gridPosition: string,
 }
 
-export default function Input({id, type, label}: InputProps): JSX.Element {
+export default function Input({id, type, label, gridPosition}: InputProps): JSX.Element {
 
 	const inputRef = useRef<HTMLParagraphElement>(null);
 	const testText1 = useRef<HTMLInputElement>(null)
@@ -24,7 +25,7 @@ export default function Input({id, type, label}: InputProps): JSX.Element {
 
 
 	return (
-		<label htmlFor={id} className={style.inputContainer}>
+		<label htmlFor={id} className={style.inputContainer} style={{gridArea: `${gridPosition}`}}>
 			<p className={`${style.label} ${style.labelMove}`} ref={inputRef}>{label}</p>
 			<input
 				id={id}

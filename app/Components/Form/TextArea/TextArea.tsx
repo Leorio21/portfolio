@@ -4,9 +4,10 @@ import style from "./TextArea.module.css"
 interface TextAreaProps {
   id: string,
 	label: string,
+	gridPosition: string,
 }
 
-export default function TextArea({id, label}: TextAreaProps): JSX.Element {
+export default function TextArea({id, label, gridPosition}: TextAreaProps): JSX.Element {
 
 	const inputRef = useRef<HTMLParagraphElement>(null);
 	const testText1 = useRef<HTMLTextAreaElement>(null)
@@ -22,12 +23,11 @@ export default function TextArea({id, label}: TextAreaProps): JSX.Element {
 	}
 	
 	return (
-		<label htmlFor={id} className={style.textAreaContainer} >
+		<label htmlFor={id} className={style.textAreaContainer} style={{gridArea: `${gridPosition}`}}>
 			<p className={`${style.label} ${style.labelMove}`} ref={inputRef}>{label}</p>
 			<textarea
 				className={style.area}
 				id={id}
-				rows={20}
 				onFocus={inputActive}
 				onClick={inputActive}
 				onBlur={inputInactive}

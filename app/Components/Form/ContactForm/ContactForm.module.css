@@ -1,0 +1,22 @@
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+@media (width > 480px) {
+  .FormContainer {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 90px 90px 90px 260px 90px;
+    row-gap: 10px;
+    column-gap: 10px;
+    max-width: 960px;
+    grid-template-areas: 
+      "lastName firstName"
+      "email email"
+      "subject subject"
+      "message message"
+      "buttons buttons";
+  }
+}

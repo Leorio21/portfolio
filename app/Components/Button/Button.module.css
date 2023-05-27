@@ -1,9 +1,9 @@
-.button:active {
+.button:active, .button:hover {
   --button--start--background: rgb(255, 255, 255)
 }
 
 @media (prefers-color-scheme: dark) {
-  .button:active {
+  .button:active, .button:hover {
     --button--start--background: rgb(0, 0, 0)
   }
 }
@@ -24,6 +24,7 @@
 
 .button:hover {
   cursor: pointer;
+  background: radial-gradient(at 0% 10%, var(--button--background--active) 1px, var(--button--start--background));
 }
 
 .button:active {

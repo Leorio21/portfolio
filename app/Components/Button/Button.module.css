@@ -2,12 +2,6 @@
   --button--start--background: rgb(255, 255, 255)
 }
 
-@media (prefers-color-scheme: dark) {
-  .button:active, .button:hover {
-    --button--start--background: rgb(0, 0, 0)
-  }
-}
-
 .button {
   width: 150px;
   height: 40px;
@@ -73,4 +67,7 @@
     background: none;
   }
 
+  .button:active, .button:hover {
+    --button--start--background: rgb(0, 0, 0)
+  }
 }

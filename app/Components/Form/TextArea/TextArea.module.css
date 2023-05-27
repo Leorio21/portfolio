@@ -9,6 +9,7 @@
 
 .area {
   border-radius: 5px;
+  padding: 3px 10px;
   height: 180px;
   width: 100%;
   resize: none;

@@ -1,0 +1,31 @@
+
+
+
+.textAreaContainer {
+  width: 100%;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  position: relative;
+}
+
+.area {
+  border-radius: 5px;
+  height: 180px;
+  width: 100%;
+  resize: none;
+  color: black;
+}
+
+.label {
+  margin: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.labelMove {
+  margin: 0px;
+  transform: translateY(23px) translateX(50px);
+  color: black;
+}

@@ -12,8 +12,8 @@ export default function ProjectInfo({inProject}: ProjectInfoProps): JSX.Element 
 		<article className={style.container} id={inProject.title}>
 			<figure className={style.miniature}>
 				<Image 
-					src = {`/carousel/${inProject.miniature}`}
-					blurDataURL = {`/carousel/${inProject.miniature}`}
+					src = {inProject.miniature}
+					blurDataURL = {inProject.miniature}
 					alt = "Capture d'ecran du projet"
 					priority = {true}
 					style={{objectFit: "cover"}}

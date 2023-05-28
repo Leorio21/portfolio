@@ -105,8 +105,8 @@ export default function Carousel({ inData, inTitle = false, inDotScroll = false,
 				<div id="imagesContainer" className={css.images}>
 					<figure className={css.image}>
 						<Image 
-							src = {`/carousel/${inData[prevIdx].miniature}`}
-							blurDataURL = {`/carousel/${inData[prevIdx].miniature}`}
+							src = {inData[prevIdx].miniature}
+							blurDataURL = {inData[prevIdx].miniature}
 							alt = "Capture d'ecran du projet"
 							priority = {true}
 							style={{objectFit: "cover"}}
@@ -117,8 +117,8 @@ export default function Carousel({ inData, inTitle = false, inDotScroll = false,
 					<figure className={css.image}>
 						<a href={`#${inData[index].title}`}>
 							<Image 
-								src = {`/carousel/${inData[index].miniature}`}
-								blurDataURL = {`/carousel/${inData[index].miniature}`}
+								src = {inData[index].miniature}
+								blurDataURL = {inData[index].miniature}
 								alt = "Capture d'ecran du projet"
 								priority = {true}
 								style={{objectFit: "cover"}}
@@ -129,8 +129,8 @@ export default function Carousel({ inData, inTitle = false, inDotScroll = false,
 					</figure>
 					<figure className={css.image}>
 						<Image 
-							src = {`/carousel/${inData[nextIdx].miniature}`}
-							blurDataURL = {`/carousel/${inData[nextIdx].miniature}`}
+							src = {inData[nextIdx].miniature}
+							blurDataURL = {inData[nextIdx].miniature}
 							alt = "Capture d'ecran du projet"
 							priority = {true}
 							style={{objectFit: "cover"}}

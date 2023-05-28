@@ -1,0 +1,67 @@
+.success {
+  --notify--text--color: #FFFFFF;
+  --notify--bg--color: #00ac00;
+  --notify--bg--color--hover: #007700;
+  --notify--border--color: #007700;
+  --notify--border--color--hover: #005515;
+}
+
+.warning {
+  --notify--text--color: #FFFFFF;
+  --notify--bg--color: #ee5f00;
+  --notify--bg--color--hover: #ac4500;
+  --notify--border--color: #ac4500;
+  --notify--border--color--hover: #642800;
+}
+
+.error {
+  --notify--text--color: #FFFFFF;
+  --notify--bg--color: #ac0000;
+  --notify--bg--color--hover: #770000;
+  --notify--border--color: #770000;
+  --notify--border--color--hover: #550000;
+}
+
+.container {
+  position: absolute;
+  top: -100px;
+  left: calc(50% - 155px);
+  width: 320px;
+  z-index: 99;
+  word-break: break-word;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 15px;
+  border: 2px solid var(--notify--border--color);
+  color: var(--notify--text--color);
+  background-color: var(--notify--bg--color);
+}
+
+.container:hover {
+  border-color: var(--notify--border--color--hover);
+  background-color: var(--notify--bg--color--hover);
+}
+
+.anim {
+  animation: showNotify 0.5s forwards;
+}
+
+.closeButton {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes showNotify {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 50px;
+  }
+}

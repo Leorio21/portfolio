@@ -63,10 +63,10 @@
 .arrow {
   position: absolute;
   fill: white;
-  width: 30px;
-  height: 30px;
-  top: calc(50% - 20px);
-  background-color: rgba(0, 0, 0, 0.438);
+  width: 40px;
+  height: 80px;
+  top: calc(50% - 40px);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 25%;
   cursor: pointer;
 }

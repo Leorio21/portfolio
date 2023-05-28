@@ -2,13 +2,13 @@ import React, { useRef } from "react"
 import style from "./Input.module.css"
 
 interface InputProps {
-	id: string,
-	type: string,
-	label: string,
-	gridPosition: string,
+	inId: string,
+	inType: string,
+	inLabel: string,
+	inGridPosition: string,
 }
 
-export default function Input({id, type, label, gridPosition}: InputProps): JSX.Element {
+export default function Input({inId, inType, inLabel, inGridPosition}: InputProps): JSX.Element {
 
 	const inputRef = useRef<HTMLParagraphElement>(null);
 	const testText1 = useRef<HTMLInputElement>(null)
@@ -25,12 +25,12 @@ export default function Input({id, type, label, gridPosition}: InputProps): JSX.
 
 
 	return (
-		<label htmlFor={id} className={style.inputContainer} style={{gridArea: `${gridPosition}`}}>
-			<p className={`${style.label} ${style.labelMove}`} ref={inputRef}>{label}</p>
+		<label htmlFor={inId} className={style.inputContainer} style={{gridArea: `${inGridPosition}`}}>
+			<p className={`${style.label} ${style.labelMove}`} ref={inputRef}>{inLabel}</p>
 			<input
-				id={id}
+				id={inId}
 				className={style.input}
-				type={type}
+				type={inType}
 				onFocus={inputActive}
 				onClick={inputActive}
 				onBlur={inputInactive}

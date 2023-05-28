@@ -25,7 +25,7 @@ export const useModal = (): {
 	};
 
 	const ModalContainer = (): React.ReactElement => {
-		return <Modal modalContent={modal} setModal={setModal} />;
+		return <Modal inModalContent={modal} inSetModal={setModal} />;
 	};
 
 	return { setModal, ModalContainer };

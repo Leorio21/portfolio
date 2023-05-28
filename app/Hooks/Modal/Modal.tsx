@@ -3,26 +3,26 @@ import React, { useEffect, useRef } from "react";
 import css from "./Modal.module.css";
 
 interface ModalProps {
-  modalContent: string | JSX.Element;
-  setModal: (modalContent: string | JSX.Element) => void;
+  inModalContent: string | JSX.Element;
+  inSetModal: (modalContent: string | JSX.Element) => void;
 }
 
-const Modal = ({ modalContent, setModal }: ModalProps): React.ReactElement => {
+const Modal = ({ inModalContent, inSetModal }: ModalProps): React.ReactElement => {
 	const refDialog = useRef<HTMLDialogElement>(null);
 
 	const onCloseHandle = (): void => {
-		setModal("");
+		inSetModal("");
 	};
 
 	useEffect(() => {
-		if (modalContent !== "") {
+		if (inModalContent !== "") {
 			refDialog.current?.showModal();
 		}
-	}, [modalContent]);
+	}, [inModalContent]);
 
 	return (
 		<dialog className={css.container} ref={refDialog}>
-			{modalContent}
+			{inModalContent}
 			<div className={css.closeButton} onClick={onCloseHandle}>
 				<XMarkIcon height={30} />
 			</div>

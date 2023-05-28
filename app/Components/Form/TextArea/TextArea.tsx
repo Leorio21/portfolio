@@ -2,12 +2,12 @@ import React, { useRef } from "react"
 import style from "./TextArea.module.css"
 
 interface TextAreaProps {
-  id: string,
-	label: string,
-	gridPosition: string,
+  inId: string,
+	inLabel: string,
+	inGridPosition: string,
 }
 
-export default function TextArea({id, label, gridPosition}: TextAreaProps): JSX.Element {
+export default function TextArea({inId, inLabel, inGridPosition}: TextAreaProps): JSX.Element {
 
 	const inputRef = useRef<HTMLParagraphElement>(null);
 	const testText1 = useRef<HTMLTextAreaElement>(null)
@@ -23,11 +23,11 @@ export default function TextArea({id, label, gridPosition}: TextAreaProps): JSX.
 	}
 	
 	return (
-		<label htmlFor={id} className={style.textAreaContainer} style={{gridArea: `${gridPosition}`}}>
-			<p className={`${style.label} ${style.labelMove}`} ref={inputRef}>{label}</p>
+		<label htmlFor={inId} className={style.textAreaContainer} style={{gridArea: `${inGridPosition}`}}>
+			<p className={`${style.label} ${style.labelMove}`} ref={inputRef}>{inLabel}</p>
 			<textarea
 				className={style.area}
-				id={id}
+				id={inId}
 				onFocus={inputActive}
 				onClick={inputActive}
 				onBlur={inputInactive}

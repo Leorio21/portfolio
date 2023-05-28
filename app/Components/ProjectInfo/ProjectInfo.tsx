@@ -4,16 +4,16 @@ import Image from "next/image";
 import { type IntProjectData } from "@/app/Intefaces/Interface"
 
 interface ProjectInfoProps {
-  inPproject: IntProjectData,
+  inProject: IntProjectData,
 }
 
-export default function ProjectInfo({inPproject}: ProjectInfoProps): JSX.Element {
+export default function ProjectInfo({inProject}: ProjectInfoProps): JSX.Element {
 	return (
-		<article className={style.container} id={inPproject.title}>
+		<article className={style.container} id={inProject.title}>
 			<figure className={style.miniature}>
 				<Image 
-					src = {`/carousel/${inPproject.miniature}`}
-					blurDataURL = {`/carousel/${inPproject.miniature}`}
+					src = {`/carousel/${inProject.miniature}`}
+					blurDataURL = {`/carousel/${inProject.miniature}`}
 					alt = "Capture d'ecran du projet"
 					priority = {true}
 					style={{objectFit: "cover"}}
@@ -22,13 +22,13 @@ export default function ProjectInfo({inPproject}: ProjectInfoProps): JSX.Element
 				/>
 			</figure>
 			<h2 className={style.title}>
-				{inPproject.title}
+				{inProject.title}
 			</h2>
 			<p className={style.description}>
-				{inPproject.description}
+				{inProject.description}
 			</p>
-			{inPproject.code !== "" && <p className={`${style.code} ${style.lien}`}><a href={inPproject.code} target="_blank" rel="noreferrer">Voir le code</a></p>}
-			{inPproject.site !== "" && <p className={`${style.site} ${style.lien}`}><a href={inPproject.site} target="_blank" rel="noreferrer">Voir le site</a></p>}
+			{inProject.code !== "" && <p className={`${style.code} ${style.lien}`}><a href={inProject.code} target="_blank" rel="noreferrer">Voir le code</a></p>}
+			{inProject.site !== "" && <p className={`${style.site} ${style.lien}`}><a href={inProject.site} target="_blank" rel="noreferrer">Voir le site</a></p>}
 		</article>
 	)
 }

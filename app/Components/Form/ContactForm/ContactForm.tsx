@@ -6,11 +6,11 @@ import style from "./ContactForm.module.css";
 export default function ContactForm(): JSX.Element {
 	return (
 		<form className={style.FormContainer}>
-			<Input id="lname" type="text" label={"Nom"} gridPosition={"lastName"}	/>
-			<Input id="fname" type="text" label={"Prénom"} gridPosition={"firstName"}	/>
-			<Input id="email" type="email" label={"Em@il"} gridPosition={"email"}	/>
-			<Input id="sujet" type="text" label={"Sujet"} gridPosition={"subject"}	/>
-			<TextArea id="message" label={"Message"} gridPosition={"message"} />
+			<Input inId="lname" inType="text" inLabel={"Nom"} inGridPosition={"lastName"}	/>
+			<Input inId="fname" inType="text" inLabel={"Prénom"} inGridPosition={"firstName"}	/>
+			<Input inId="email" inType="email" inLabel={"Em@il"} inGridPosition={"email"}	/>
+			<Input inId="sujet" inType="text" inLabel={"Sujet"} inGridPosition={"subject"}	/>
+			<TextArea inId="message" inLabel={"Message"} inGridPosition={"message"} />
 		</form>
 	)
 }

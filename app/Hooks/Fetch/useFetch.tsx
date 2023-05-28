@@ -6,13 +6,13 @@ export const useFetch = <T,>(
   isLoading: boolean;
   response?: T | undefined;
   error: string | undefined;
-  fetchFunction: (data?: string) => Promise<void>;
+  fetchFunction: (inData?: string) => Promise<void>;
 } => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | undefined>(undefined);
 	const [response, setResponse] = useState<T | undefined>(undefined);
 
-	const fetchFunction = async (data?: string): Promise<void> => {
+	const fetchFunction = async (inData?: string): Promise<void> => {
 		setIsLoading(true);
 		setError(undefined);
 		try {

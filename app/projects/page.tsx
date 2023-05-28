@@ -22,7 +22,7 @@ export default function Portfolio(): JSX.Element {
 	if (response !== undefined) {
 
 		const listing = response.map((project, idx) => {
-			return <ProjectInfo inPproject={project} key={`project${idx}`} />
+			return <ProjectInfo inProject={project} key={`project${idx}`} />
 		})
 
 		return (

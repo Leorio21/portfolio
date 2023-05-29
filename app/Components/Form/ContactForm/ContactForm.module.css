@@ -3,6 +3,15 @@
   flex-direction: column;
   width: 90%;
 }
+
+.buttons {
+  grid-area: buttons;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 @media (width > 480px) {
   .FormContainer {
     width: 80%;
@@ -14,7 +23,7 @@
     max-width: 960px;
     grid-template-areas: 
       "lastName firstName"
-      "email email"
+      "email tel"
       "subject subject"
       "message message"
       "buttons buttons";

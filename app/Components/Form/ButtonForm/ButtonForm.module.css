@@ -1,0 +1,36 @@
+.red {
+  --button--text--color: white;
+  --button--text--color--hover: white;
+  --button--background--color: red;
+  --button--bg--color--hover: rgb(172, 0, 0);
+}
+
+.green {
+  --button--text--color: white;
+  --button--text--color--hover: black;
+  --button--background--color: green;
+  --button--bg--color--hover: rgb(0, 226, 0);
+}
+
+.button {
+  height: 50px;
+  width: 40%;
+  background-color: var(--button--background--color);
+  color: var(--button--text--color);
+  font-size: 20px;
+  border-radius: 15px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+.button:hover {
+  background-color: var(--button--bg--color--hover);
+  color: var(--button--text--color--hover);
+}
+
+/* @media (width > 480px) {
+  .button {
+    width: 100%;
+  }
+} */

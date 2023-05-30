@@ -34,7 +34,7 @@ const Notify = ({
 		<div className={`${style.container} ${style[inTheme]}`} ref={notifyRef}>
 			{inContent}
 			<div onClick={onCloseHandle} className={style.closeButton}>
-				<XMarkIcon height={20} />
+				<XMarkIcon height={20} className={style.closeButtonIcon} />
 			</div>
 		</div>
 	);

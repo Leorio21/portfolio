@@ -11,6 +11,6 @@ interface ButtonProps {
 export default function ButtonForm({inType, inValue, inColor = "green", inClick = () => {}}: ButtonProps): JSX.Element {
 
 	return (
-		<button type={inType} className={`${style.button} ${style[inColor]}`}>{inValue}</button>
+		<button type={inType} className={`${style.button} ${style[inColor]}`} onClick={inClick}>{inValue}</button>
 	)
 }

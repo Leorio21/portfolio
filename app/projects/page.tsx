@@ -4,13 +4,13 @@ import style from "./page.module.css"
 import Carousel from "../Components/Carousel/Carousel"
 import { PlayIcon } from "@heroicons/react/20/solid"
 import { useFetch } from "../Hooks/Fetch/useFetch";
-import { type IntProjectData } from "../Intefaces/Interface";
+import { IntProjectData } from "../Intefaces/Interfaces";
 import ProjectInfo from "../Components/ProjectInfo/ProjectInfo";
 
 export default function Portfolio(): JSX.Element {
 
 	const { response, error } = useFetch<IntProjectData[]>("./projets.json");
-	
+
 	if (error !== undefined) {
 		return (
 			<div className={style.container}>

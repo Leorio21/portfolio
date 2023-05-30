@@ -1,22 +1,22 @@
 import React from "react"
 import style from "./ProjectInfo.module.css"
 import Image from "next/image";
-import { type IntProjectData } from "@/app/Intefaces/Interface"
+import { IntProjectData } from "@/app/Intefaces/Interfaces"
 
 interface ProjectInfoProps {
-  inProject: IntProjectData,
+	inProject: IntProjectData,
 }
 
-export default function ProjectInfo({inProject}: ProjectInfoProps): JSX.Element {
+export default function ProjectInfo({ inProject }: ProjectInfoProps): JSX.Element {
 	return (
 		<article className={style.container} id={inProject.title}>
 			<figure className={style.miniature}>
-				<Image 
-					src = {inProject.miniature}
-					blurDataURL = {inProject.miniature}
-					alt = "Capture d'ecran du projet"
-					priority = {true}
-					style={{objectFit: "cover"}}
+				<Image
+					src={inProject.miniature}
+					blurDataURL={inProject.miniature}
+					alt="Capture d'ecran du projet"
+					priority={true}
+					style={{ objectFit: "cover" }}
 					sizes="25vw"
 					fill
 				/>

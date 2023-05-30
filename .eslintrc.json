@@ -5,7 +5,7 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "standard-with-typescript",
+        "next/core-web-vitals",
         "prettier"
     ],
     "overrides": [

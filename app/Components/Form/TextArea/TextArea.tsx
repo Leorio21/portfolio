@@ -1,10 +1,15 @@
 import React, { useRef } from "react"
 import style from "./TextArea.module.css"
+import { IFormValues } from "@/app/Intefaces/Interfaces";
+import { FieldError, FieldErrorsImpl, Merge, UseFormRegister } from "react-hook-form";
 
 interface TextAreaProps {
   inId: string,
 	inLabel: string,
 	inGridPosition: string,
+	inError?: string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined
+	inRegister: UseFormRegister<IFormValues>,
+  inRequired: boolean,
 }
 
 export default function TextArea({inId, inLabel, inGridPosition}: TextAreaProps): JSX.Element {

@@ -5,7 +5,7 @@ import TextArea from "../TextArea/TextArea";
 import style from "./ContactForm.module.css";
 import { useNotify } from "@/app/Hooks/Notify/useNotify";
 import ButtonForm from "../ButtonForm/ButtonForm";
-import { IFormValues } from "@/app/Intefaces/Interfaces";
+import { IFormValues } from "@/app/Interfaces/Interfaces";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";

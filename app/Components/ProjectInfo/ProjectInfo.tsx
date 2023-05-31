@@ -1,7 +1,7 @@
 import React from "react"
 import style from "./ProjectInfo.module.css"
 import Image from "next/image";
-import { IntProjectData } from "@/app/Intefaces/Interfaces"
+import { IntProjectData } from "@/app/Interfaces/Interfaces"
 
 interface ProjectInfoProps {
 	inProject: IntProjectData,

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import style from "./Input.module.css"
-import { IFormValues } from "@/app/Intefaces/Interfaces";
+import { IFormValues } from "@/app/Interfaces/Interfaces";
 import { FieldError, FieldErrorsImpl, Merge, Path, UseFormRegister, UseFormWatch } from "react-hook-form";
 
 interface InputProps {

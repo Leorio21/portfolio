@@ -4,7 +4,7 @@ import style from "./page.module.css"
 import Carousel from "../Components/Carousel/Carousel"
 import { PlayIcon } from "@heroicons/react/20/solid"
 import { useFetch } from "../Hooks/Fetch/useFetch";
-import { IntProjectData } from "../Intefaces/Interfaces";
+import { IntProjectData } from "../Interfaces/Interfaces";
 import ProjectInfo from "../Components/ProjectInfo/ProjectInfo";
 
 export default function Portfolio(): JSX.Element {

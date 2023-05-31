@@ -1,4 +1,4 @@
-import { IFormValues } from "@/app/Intefaces/Interfaces";
+import { IFormValues } from "@/app/Interfaces/Interfaces";
 import { useEffect, useState } from "react";
 
 export const useFetch = <T,>(

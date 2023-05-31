@@ -19,7 +19,6 @@ export const useFetch = <T,>(
 		setError(undefined);
 		if (inData && param) {
 			param.body = JSON.stringify(inData);
-			console.log(param)
 		}
 		try {
 			const result = await (await fetch(inUrl, param)).json();

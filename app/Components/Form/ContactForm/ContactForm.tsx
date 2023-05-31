@@ -16,8 +16,32 @@ const schemaValidation = yup.object().shape({
 		.matches( /^[a-zÀ-ÖØ-öø-ÿ -]+$/i, "Présence de caractères non authorisés"),
 	lastName: yup.string()
 		.required("Veuillez saisir votre nom")	
-		.matches( /^[a-z -]+$/i, "Présence de caractères non authorisés")
-});
+		.matches( /^[a-z -]+$/i, "Présence de caractères non authorisés"),
+	phone: yup.string()
+		.when("email", {
+			is: "",
+			then: yup.string()
+				.required("Veuillez saisir votre numéro de téléphone ou email")
+				.matches( /^[0][1-79][0-9]{8}$/, "Veuillez saisir un numéro de téléphone valide"),
+			otherwise: yup.string()
+				.matches( /^[0][1-79][0-9]{8}$/, {message: "Veuillez saisir un numéro de téléphone valide", excludeEmptyString: true})
+				.optional(),			
+		}),
+	email: yup.string()
+		.when("phone", {
+			is: "",
+			then: yup.string()
+				.required("Veuillez saisir votre email ou numéro de téléphone")
+				.matches( /^([a-z0-9-_\.]+)@([a-z0-9-]+)\.([a-z-]{2,})$/i, "Veuillez saisir un email valide"),
+			otherwise: yup.string()
+				.matches( /^([a-z0-9-_\.]+)@([a-z0-9-]+)\.([a-z-]{2,})$/i, {message: "Veuillez saisir un email valide", excludeEmptyString: true})
+				.optional(),
+		}),
+	subject: yup.string()
+		.required("Veuillez saisir un sujet")	,
+	message: yup.string()
+		.required("Veuillez saisir votre message")	,
+}, [["email", "phone"]]);
 
 export default function ContactForm(): JSX.Element {
 	
@@ -26,12 +50,10 @@ export default function ContactForm(): JSX.Element {
 	const { setNotify, NotifyContainer } = useNotify();
 	const [color, setColor] = useState<"success" | "error" | "warning">("success");
 
-	const onFormSubmit = (data: IFormValues): boolean => {
+	const onFormSubmit = (data: IFormValues): void => {
 		console.log(data);
 		setColor("success");
 		setNotify(data.lastName);
-
-		return false;
 	}
 
 	return (
@@ -94,6 +116,7 @@ export default function ContactForm(): JSX.Element {
 					inError={errors.message?.message}
 					inRequired={true}
 					inRegister={register}
+					inWatch={watch}
 				/>
 				<div className={style.buttons}>
 					<ButtonForm

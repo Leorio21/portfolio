@@ -1,44 +1,61 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import style from "./TextArea.module.css"
 import { IFormValues } from "@/app/Intefaces/Interfaces";
-import { FieldError, FieldErrorsImpl, Merge, UseFormRegister } from "react-hook-form";
+import { FieldError, FieldErrorsImpl, Merge, Path, UseFormRegister, UseFormWatch } from "react-hook-form";
 
 interface TextAreaProps {
-  inId: string,
+  inId: Path<IFormValues>,
 	inLabel: string,
 	inGridPosition: string,
 	inError?: string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined
 	inRegister: UseFormRegister<IFormValues>,
   inRequired: boolean,
+	inWatch: UseFormWatch<IFormValues>,
 }
 
-export default function TextArea({inId, inLabel, inGridPosition}: TextAreaProps): JSX.Element {
+export default function TextArea({inId, inLabel, inGridPosition, inError, inRegister, inRequired, inWatch}: TextAreaProps): JSX.Element {
 
-	const inputRef = useRef<HTMLParagraphElement>(null);
-	const testText1 = useRef<HTMLTextAreaElement>(null)
+	const LabelRef = useRef<HTMLParagraphElement>(null);
+	const inputData = inWatch(inId);
 
+	const [isFocused, setIsFocused] = useState(false);
+	
 	const inputActive = (): void => {
-		inputRef.current?.classList.remove(style.labelMove)
+		setIsFocused(true);
+		LabelRef.current?.classList.remove(style.labelMove)
 	}
 
+	const onBlurHandler = (): void => {
+		setIsFocused(false)
+		inputInactive();
+	}
+	
 	const inputInactive = (): void => {
-		if (testText1.current?.value === "") {
-			inputRef.current?.classList.add(style.labelMove)
+		if (inputData === "" || inputData === undefined) {
+			LabelRef.current?.classList.add(style.labelMove)
+		} else {
+			LabelRef.current?.classList.remove(style.labelMove)
 		}
 	}
+
+	useEffect(()=>{
+		if (!isFocused) {
+			inputInactive();
+		}
+	}, [inputData])
 	
 	return (
 		<label htmlFor={inId} className={style.textAreaContainer} style={{gridArea: `${inGridPosition}`}}>
-			<p className={`${style.label} ${style.labelMove}`} ref={inputRef}>{inLabel}</p>
+			<p className={`${style.label} ${style.labelMove}`} ref={LabelRef}>{inLabel}</p>
 			<textarea
 				className={style.area}
 				id={inId}
 				onFocus={inputActive}
 				onClick={inputActive}
-				onBlur={inputInactive}
-				ref={testText1}
+				{...inRegister(inId, {onBlur: () => {onBlurHandler()}})}
 			>
 			</textarea>
+			<span className={style.error}>{inError?.toString()}</span>
 		</label>
 	)
 }

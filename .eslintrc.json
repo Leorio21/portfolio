@@ -21,6 +21,7 @@
     ],
     "rules": {
         "indent": ["error", "tab"],
-        "quotes": ["error", "double"]
+        "quotes": ["error", "double"],
+        "react-hooks/exhaustive-deps": "off"
     }
 }

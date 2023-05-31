@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from "react"
 import style from "./Input.module.css"
 import { IFormValues } from "@/app/Intefaces/Interfaces";

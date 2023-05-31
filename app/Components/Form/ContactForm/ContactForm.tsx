@@ -23,9 +23,9 @@ const schemaValidation = yup.object().shape({
 			is: "",
 			then: yup.string()
 				.required("Veuillez saisir votre numéro de téléphone ou email")
-				.matches( /^[0|+33][1-79][0-9]{8}$/, "Veuillez saisir un numéro de téléphone valide"),
+				.matches( /^(0|\+33)[1-79][0-9]{8}$/, "Veuillez saisir un numéro de téléphone valide"),
 			otherwise: yup.string()
-				.matches( /^[0|+33][1-79][0-9]{8}$/, {message: "Veuillez saisir un numéro de téléphone valide", excludeEmptyString: true})
+				.matches( /^(0|\+33)[1-79][0-9]{8}$/, {message: "Veuillez saisir un numéro de téléphone valide", excludeEmptyString: true})
 				.optional(),			
 		}),
 	email: yup.string()

@@ -1,8 +1,8 @@
 .red {
   --button--text--color: white;
   --button--text--color--hover: white;
-  --button--background--color: red;
-  --button--bg--color--hover: rgb(172, 0, 0);
+  --button--background--color: rgb(180, 0, 0);
+  --button--bg--color--hover: rgb(119, 0, 0);
 }
 
 .green {
@@ -28,9 +28,3 @@
   background-color: var(--button--bg--color--hover);
   color: var(--button--text--color--hover);
 }
-
-/* @media (width > 480px) {
-  .button {
-    width: 100%;
-  }
-} */

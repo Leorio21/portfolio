@@ -1,9 +1,9 @@
-import React from "react"
-import { Lobster, Courgette } from "next/font/google"
-import "./globals.css"
-import css from "./layout.module.css"
+import React from "react";
+import { Lobster, Courgette } from "next/font/google";
+import "./globals.css";
+import css from "./layout.module.css";
 
-import NavBar from "./Components/NavBar/NavBar"
+import NavBar from "./Components/NavBar/NavBar";
 
 const lobster = Lobster({
 	weight: "400",

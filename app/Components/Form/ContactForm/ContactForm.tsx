@@ -13,10 +13,10 @@ import { useFetch } from "@/app/Hooks/Fetch/useFetch";
 
 const schemaValidation = yup.object().shape({
 	firstName: yup.string()
-		.required("Veuillez saisir votre prénom")	
+		.required("Veuillez saisir votre prénom")
 		.matches( /^[a-zÀ-ÖØ-öø-ÿ -]+$/i, "Présence de caractères non authorisés"),
 	lastName: yup.string()
-		.required("Veuillez saisir votre nom")	
+		.required("Veuillez saisir votre nom")
 		.matches( /^[a-z -]+$/i, "Présence de caractères non authorisés"),
 	phone: yup.string()
 		.when("email", {
@@ -26,7 +26,7 @@ const schemaValidation = yup.object().shape({
 				.matches( /^(0|\+33)[1-79][0-9]{8}$/, "Veuillez saisir un numéro de téléphone valide"),
 			otherwise: yup.string()
 				.matches( /^(0|\+33)[1-79][0-9]{8}$/, {message: "Veuillez saisir un numéro de téléphone valide", excludeEmptyString: true})
-				.optional(),			
+				.optional(),
 		}),
 	email: yup.string()
 		.when("phone", {
@@ -39,9 +39,9 @@ const schemaValidation = yup.object().shape({
 				.optional(),
 		}),
 	subject: yup.string()
-		.required("Veuillez saisir un sujet")	,
+		.required("Veuillez saisir un sujet"),
 	message: yup.string()
-		.required("Veuillez saisir votre message")	,
+		.required("Veuillez saisir votre message"),
 }, [["email", "phone"]]);
 
 export default function ContactForm(): JSX.Element {

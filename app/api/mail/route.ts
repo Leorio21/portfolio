@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
 					},
 				],
 				Subject: body.subject,
-				TextPart: `${body.message}\n\n-----\n${body.firstName} ${body.lastName}\n${body.phone}`,
+				TextPart: `${body.message}\n\n-----\n${body.firstName} ${body.lastName}\n${body.email}\n${body.phone}`,
 			},
 		],
 	})

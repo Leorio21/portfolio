@@ -6,16 +6,18 @@ export async function POST(request: NextRequest) {
 	const body: IFormValues = await request.json()
 
 	const transporter = nodemailer.createTransport({
-		service: "gmail",
+		service: process.env.SERVICE_MAIL,
 		auth: {
 			user: process.env.USER_MAIL,
 			pass: process.env.MDP_MAIL,
+			clientId: process.env.OAUTH2_ID,
+			clientSecret: process.env.OAUTH2_TOKEN,
 		},
 	});
 
 	const mail = {
 		from: `${body.firstName} ${body.lastName} <${body.email}>`,
-		to: "Ptitlue@gmail.com",
+		to: process.env.DESTINATION_MAIL,
 		subject: body.subject,
 		text: `${body.message} \n\n----------\n${body.firstName} ${body.lastName}\n${body.phone}`
 	};

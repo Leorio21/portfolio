@@ -55,6 +55,8 @@ export default function ContactForm(): JSX.Element {
 
 	const onFormSubmit = async (data: IFormValues): Promise<void> => {
 		reset();
+		setColor("warning");
+		setNotify("Envoi en cours ...");
 		await fetchFunction(data);
 	}
 

@@ -54,6 +54,7 @@ export default function ContactForm(): JSX.Element {
 	const {response, isLoading, error, fetchFunction} = useFetch<{message: string}>("api/mail", {method: "POST", headers: {"Content-Type": "application/json",	Accept: "application/json"}});
 
 	const onFormSubmit = async (data: IFormValues): Promise<void> => {
+		reset();
 		await fetchFunction(data);
 	}
 
@@ -61,7 +62,6 @@ export default function ContactForm(): JSX.Element {
 		if (response !== undefined) {
 			setColor("success");
 			setNotify(response.message);
-			reset();
 		}
 	}, [response])
 

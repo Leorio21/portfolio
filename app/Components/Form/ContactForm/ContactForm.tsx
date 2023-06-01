@@ -51,16 +51,17 @@ export default function ContactForm(): JSX.Element {
 	const { setNotify, NotifyContainer } = useNotify();
 	const [color, setColor] = useState<"success" | "error" | "warning">("success");
 
-	const {response, isLoading, error, fetchFunction} = useFetch<{data: string}>("api/mail", {method: "POST", headers: {"Content-Type": "application/json",	Accept: "application/json"}});
+	const {response, isLoading, error, fetchFunction} = useFetch<{message: string}>("api/mail", {method: "POST", headers: {"Content-Type": "application/json",	Accept: "application/json"}});
 
 	const onFormSubmit = async (data: IFormValues): Promise<void> => {
 		await fetchFunction(data);
 	}
 
 	useEffect(() => {
+		console.log(response)
 		if (response !== undefined) {
 			setColor("success")
-			setNotify(response.data)
+			setNotify(response.message)
 		}
 	}, [response])
 

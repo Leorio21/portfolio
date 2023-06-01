@@ -58,10 +58,10 @@ export default function ContactForm(): JSX.Element {
 	}
 
 	useEffect(() => {
-		console.log(response)
 		if (response !== undefined) {
-			setColor("success")
-			setNotify(response.message)
+			setColor("success");
+			setNotify(response.message);
+			reset();
 		}
 	}, [response])
 

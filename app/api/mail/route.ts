@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
 			{
 				From: {
 					Email: process.env.DESTINATION_MAIL,
-					Name: "Me",
+					Name: "Contact Portfolio",
 				},
 				To: [
 					{
@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
 	try {
 		await mail
 	} catch (error) {
-		return NextResponse.json({ message: error}, { status: 500 });
+		return NextResponse.json({ message: error, status: 500}, { status: 500 });
 	}
-	return NextResponse.json({ message: "Mail envoyé"}, { status: 200 });  
+	return NextResponse.json({ message: "Mail envoyé", status: 200}, { status: 200 });  
 }

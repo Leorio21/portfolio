@@ -62,6 +62,14 @@
   --button--background--active: rgb(57, 151, 69);
 }
 
+.red {
+  --button--border--color: rgb(255, 0, 0);
+  --button--text--color: var(--text--color);
+  --button--text--color--active: var(--text--color);
+  --button--background: rgb(179, 23, 23);
+  --button--background--active: rgb(121, 8, 8);
+}
+
 @media (prefers-color-scheme: dark) {
   .button {
     background: none;

@@ -51,7 +51,7 @@ export default function ContactForm(): JSX.Element {
 	const { setNotify, NotifyContainer } = useNotify();
 	const [color, setColor] = useState<"success" | "error" | "warning">("success");
 
-	const {response, isLoading, error, fetchFunction} = useFetch<{message: string}>("api/mail", {method: "POST", headers: {"Content-Type": "application/json",	Accept: "application/json"}});
+	const {response, isLoading, error, fetchFunction} = useFetch<{message: string, status: number}>("api/mail", {method: "POST", headers: {"Content-Type": "application/json",	Accept: "application/json"}});
 
 	const onFormSubmit = async (data: IFormValues): Promise<void> => {
 		reset();
@@ -62,7 +62,12 @@ export default function ContactForm(): JSX.Element {
 
 	useEffect(() => {
 		if (response !== undefined) {
-			setColor("success");
+			console.log(response, response.status)
+			if (response.status !== 200) {
+				setColor("error");
+			} else {
+				setColor("success")
+			}
 			setNotify(response.message);
 		}
 	}, [response])

@@ -6,6 +6,7 @@ import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/20/solid";
 
 interface IntInData {
 	miniature: string,
+	title: string,
 	[propName: string]: any,
 }
 
@@ -38,17 +39,17 @@ export default function Carousel({inData}: CarouselProps): JSX.Element {
 						const rotateAngle = angle * idx
 						const tranlateLength = 50 * inData.length //44.5
 						return (
-							<Image 
-								className={style.img}
-								src = {el.miniature}
-								blurDataURL = {el.miniature}
-								alt = "Capture d'ecran du projet"
-								priority = {true}
-								style={{transform: `rotateY(${rotateAngle}deg) translateZ(${tranlateLength}px)`}}
-								sizes="50vw"
-								fill
-								key = {idx}
-							/>
+							<a href={`#${el.title}`} key = {idx} className={style.link} style={{transform: `rotateY(${rotateAngle}deg) translateZ(${tranlateLength}px)`}}>
+								<Image 
+									src = {el.miniature}
+									blurDataURL = {el.miniature}
+									alt = "Capture d'ecran du projet"
+									priority = {true}
+									sizes="50vw"
+									className={style.img}
+									fill
+								/>
+							</a>
 						)})}
 				</div>
 			</div>

@@ -30,10 +30,6 @@ export default function Portfolio(): JSX.Element {
 				Cliquez sur l&apos;image pour plus de détails
 				<Carousel
 					inData={response}
-					inTitle={true}
-					inDotScroll={true}
-					inButtons={true}
-					inAutoPlay={true}
 				/>
 				<div className={style.listing}>
 					{listing}

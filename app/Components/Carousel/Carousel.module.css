@@ -1,105 +1,56 @@
-.headband, .title {
-  --background--color--headband: rgb(221, 221, 221);
-}
-
-@media (prefers-color-scheme: dark) {
-  .headband, .title {
-    --background--color--headband: rgba(0, 0, 0, 0.9);
-  }
-}
-
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-}
-
-.carousel {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 450px;
-  width: 300px;
-  border: ridge 2px var(--text--color);
-  overflow: hidden;
+  perspective: 950px;
 }
 
-.headband {
-  width: 100%;
+.containerImg {
+  transform-style: preserve-3d;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  font-size: 30px;
-  color: var(--text--color);
-  background-color: var(--background--color--headband);
+  width: 200px;
+  height: 200px;
+  transition: all 2s ease-in-out;
 }
 
-.title {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  font-size: 30px;
-  color: var(--text--color--light);
-  background-color: var(--background--color--headband);
+.button {
+  position: fixed;
+  border-radius: 20px;
+  z-index: 3;
+  top: -50px;
+  width: 150px;
+  height: 200px;
 }
 
-.dotsScroll {
-  height: 30px;
-  bottom: 0px;
+.buttonPrev {
+  left: 0px;
 }
 
-.dotScroll {
-  width: 50px;
-  cursor: pointer;
+.buttonNext {
+  right: 0px;
 }
 
-.selected {
-  fill: red;
-}
-
-.arrow {
+.img {
+  border: 3px outset white;
   position: absolute;
-  fill: white;
-  width: 40px;
-  height: 80px;
-  top: calc(50% - 40px);
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 25%;
-  cursor: pointer;
+  top: 0px;
+  object-fit: cover;
 }
 
-.leftArrow {
-  left: -5px;
-}
+@media (width > 700px) {
+  .button {
+    top: calc(50% - 100px);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 
-.rightArrow {
-  right: -5px;
-}
-
-.images {
-  position: relative;
-  width: 900px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  transform: translateX(-302px);
-}
-
-.image {
-  position: relative;
-  width: 300px;
-  height: 100%;
-}
-
-.animFF {
-  transform: translateX(-602px);
-  transition: all 0.5s ease-in-out;
-}
-
-.animFR {
-  transform: translateX(-2px);
-  transition: all 0.5s ease-in-out;
+  .containerImg {
+    width: 300px;
+    height: 300px;
+  }
+  .img {
+    object-fit: cover;
+  }
 }

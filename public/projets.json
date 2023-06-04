@@ -26,5 +26,12 @@
     "description": "Ce portfolio\nPremier projet pour découvrir NextJS et affichage dark/Ligth mode en fonction des préférences utilisateur\n\nTechologies utilisées:\n\n- NextJS - TypeScript",
     "code": "https://github.com/Leorio21/portfolio",
     "site": "https://portfolio-leorio21.vercel.app/"
+  },
+  {
+    "title": "Carrousel",
+    "miniature": "/carousel/Carrousel.webp",
+    "description": "Carrousel photo avec effet 3D\n\nTechologies utilisées:\n\n- NextJS - TypeScript - CSS",
+    "code": "https://github.com/Leorio21/carousel",
+    "site": "https://carousel-omega.vercel.app/"
   }
 ]

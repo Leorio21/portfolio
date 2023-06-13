@@ -16,6 +16,13 @@ interface CarouselProps {
 
 export default function Carousel({inData}: CarouselProps): JSX.Element {
 
+	function changeBackground(e: any) {
+		// e.target!.style.background = "red";
+	}
+
+	function changeBackground2(e: any) {
+		// e.target!.style.background = "rgba(0, 0, 0, 0.5)";
+	}
   
 	const [rotation, setRotation] = useState<number>(0);
 	const angle = 360/inData.length;
@@ -32,7 +39,7 @@ export default function Carousel({inData}: CarouselProps): JSX.Element {
 	return (
 		<>
 			<div className={style.container}>
-				<ChevronLeftIcon onClick={() => {changeDeg(angle)}} className={`${style.button} ${style.buttonPrev}`} />
+				<ChevronLeftIcon onMouseEnter={changeBackground} onMouseLeave={changeBackground2} onClick={() => {changeDeg(angle)}} className={`${style.button} ${style.buttonPrev}`} />
 				<ChevronRightIcon onClick={() => {changeDeg(-angle)}} className={`${style.button} ${style.buttonNext}`}/>
 				<div id="carousel" className={style.containerImg} ref={containerImgRef}>
 					{inData.map((el, idx) => {

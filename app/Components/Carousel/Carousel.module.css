@@ -23,6 +23,7 @@
   top: -50px;
   width: 150px;
   height: 200px;
+  transition: all 2s ease-in-out;
 }
 
 .buttonPrev {

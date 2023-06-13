@@ -9,9 +9,14 @@ export default function NavBar(): JSX.Element {
 	const menuIconRef = useRef<HTMLDivElement>(null);
 	const [windowWidth, setWindowWitdh] = useState(window.innerWidth);
 
-	useEffect(() => {
+	const handleResize = () => {
 		setWindowWitdh(window.innerWidth)
-	}, [window.innerWidth])
+	}
+
+	useEffect(() => {
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, [])
 
 	const setVisible = (): void => {
 		if(menuIconRef.current !== null && windowWidth <= 800) {

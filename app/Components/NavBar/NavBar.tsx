@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react"
+import { useWindowSize } from "@/app/Hooks/WindowSize/useWindowsSize"
 import style from "./NavBar.module.css"
 import Button from "../Button/Button"
 import { Bars3Icon } from "@heroicons/react/20/solid"
@@ -7,19 +8,10 @@ import { Bars3Icon } from "@heroicons/react/20/solid"
 export default function NavBar(): JSX.Element {
 
 	const menuIconRef = useRef<HTMLDivElement>(null);
-	const [windowWidth, setWindowWitdh] = useState(window.innerWidth);
-
-	const handleResize = () => {
-		setWindowWitdh(window.innerWidth)
-	}
-
-	useEffect(() => {
-		window.addEventListener("resize", handleResize);
-		return () => window.removeEventListener("resize", handleResize);
-	}, [])
+	const screenWidth = useWindowSize().width;
 
 	const setVisible = (): void => {
-		if(menuIconRef.current !== null && windowWidth <= 800) {
+		if(menuIconRef.current !== null && screenWidth <= 800) {
 			if (menuIconRef.current?.classList.contains(style.menu_visible)) {
 				menuIconRef.current.classList.remove(style.menu_visible)
 			} else {

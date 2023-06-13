@@ -8,8 +8,12 @@ export default function NavBar(): JSX.Element {
 
 	const menuIconRef = useRef<HTMLDivElement>(null);
 
+	const getWidth = () => {
+		return window.innerWidth;
+	}
+
 	const setVisible = (): void => {
-		if(menuIconRef.current !== null && window.innerWidth <= 800) {
+		if(menuIconRef.current !== null && getWidth() <= 800) {
 			if (menuIconRef.current?.classList.contains(style.menu_visible)) {
 				menuIconRef.current.classList.remove(style.menu_visible)
 			} else {

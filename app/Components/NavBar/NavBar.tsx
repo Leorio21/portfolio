@@ -8,10 +8,10 @@ import { Bars3Icon } from "@heroicons/react/20/solid"
 export default function NavBar(): JSX.Element {
 
 	const menuIconRef = useRef<HTMLDivElement>(null);
-	const windowSize = useWindowSize();
+	const windowWidth = useWindowSize().width;
 
 	const setVisible = (): void => {
-		if(menuIconRef.current !== null && windowSize.width <= 800) {
+		if(menuIconRef.current !== null && windowWidth <= 800) {
 			if (menuIconRef.current?.classList.contains(style.menu_visible)) {
 				menuIconRef.current.classList.remove(style.menu_visible)
 			} else {

@@ -22,7 +22,11 @@ export default function NavBar(): JSX.Element {
 	}
 
 	useEffect(() => {
-		setIsActiveBurger(screenWidth <= 800 ? true : false);
+		if (screenWidth <= 800) {
+			setIsActiveBurger(true);
+		} else {
+			setIsActiveBurger(false);
+		}
 	}, [screenWidth]);
 
 	return (

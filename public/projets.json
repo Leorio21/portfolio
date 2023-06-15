@@ -33,5 +33,12 @@
     "description": "Carrousel photo avec effet 3D\n\nTechologies utilisées:\n\n- NextJS - TypeScript - CSS",
     "code": "https://github.com/Leorio21/carousel",
     "site": "https://carousel-omega.vercel.app/"
+  },
+  {
+    "title": "Compteur",
+    "miniature": "/carousel/Compteur.webp",
+    "description": "Ccompteur avec pales tournantes avec effet 3D\n\nTechologies utilisées:\n\n- HTML - CSS - JS",
+    "code": "https://github.com/Leorio21/compteur",
+    "site": "https://compteur.vercel.app/"
   }
 ]

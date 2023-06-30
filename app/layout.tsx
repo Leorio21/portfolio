@@ -19,7 +19,7 @@ const courgette = Courgette({
 
 export const metadata = {
 	title: "Jérôme LEFEUVRE - dev Web",
-	description: "Portfolio créer avec NextJs, TS",
+	description: "Portfolio créé avec NextJs, TS",
 }
 
 export default function RootLayout({

@@ -37,8 +37,15 @@
   {
     "title": "Compteur",
     "miniature": "/carousel/Compteur.webp",
-    "description": "Ccompteur avec pales tournantes avec effet 3D\n\nTechologies utilisées:\n\n- HTML - CSS - JS",
+    "description": "Compteur avec pales tournantes avec effet 3D\n\nTechologies utilisées:\n\n- HTML - CSS - JS",
     "code": "https://github.com/Leorio21/compteur",
     "site": "https://compteur.vercel.app/"
+  },
+  {
+    "title": "Cube 3D",
+    "miniature": "/carousel/cube3D.webp",
+    "description": "Petit cube en 3D\n\nTechologies utilisées:\n\n- HTML - CSS - JS",
+    "code": "https://github.com/Leorio21/cube3D",
+    "site": "https://cube3-d.vercel.app/"
   }
 ]

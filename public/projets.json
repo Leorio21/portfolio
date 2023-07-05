@@ -21,28 +21,28 @@
     "site": ""
   },
   {
-    "title": "Portfolio",
+    "title": "Portfolio - WIP",
     "miniature": "/carousel/Portfolio.webp",
     "description": "Ce portfolio\nPremier projet pour découvrir NextJS et affichage dark/Ligth mode en fonction des préférences utilisateur\n\nTechologies utilisées:\n\n- NextJS - TypeScript",
     "code": "https://github.com/Leorio21/portfolio",
     "site": "https://portfolio-leorio21.vercel.app/"
   },
   {
-    "title": "Carrousel",
+    "title": "Carrousel - WIP",
     "miniature": "/carousel/Carrousel.webp",
     "description": "Carrousel photo avec effet 3D\n\nTechologies utilisées:\n\n- NextJS - TypeScript - CSS",
     "code": "https://github.com/Leorio21/carousel",
     "site": "https://carousel-omega.vercel.app/"
   },
   {
-    "title": "Compteur",
+    "title": "Compteur - WIP",
     "miniature": "/carousel/Compteur.webp",
     "description": "Compteur avec pales tournantes avec effet 3D\n\nTechologies utilisées:\n\n- HTML - CSS - JS",
     "code": "https://github.com/Leorio21/compteur",
     "site": "https://compteur.vercel.app/"
   },
   {
-    "title": "Cube 3D",
+    "title": "Cube 3D - WIP",
     "miniature": "/carousel/cube3D.webp",
     "description": "Petit cube en 3D\n\nTechologies utilisées:\n\n- HTML - CSS - JS",
     "code": "https://github.com/Leorio21/cube3D",

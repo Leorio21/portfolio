@@ -16,7 +16,7 @@ export default function ProjectInfo({ inProject }: ProjectInfoProps): JSX.Elemen
 					blurDataURL={inProject.miniature}
 					alt="Capture d'ecran du projet"
 					priority={true}
-					style={{ objectFit: "cover" }}
+					style={{ objectFit: "contain" }}
 					sizes="25vw"
 					fill
 				/>

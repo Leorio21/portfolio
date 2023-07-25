@@ -1,65 +1,159 @@
 "use client"
+import React, { useEffect, useState } from "react";
+import css from "./Carousel.module.css";
 import Image from "next/image";
-import style from "./Carousel.module.css";
-import React, { useEffect, useRef, useState } from "react";
-import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/20/solid";
-
+import { ChevronRightIcon, ChevronLeftIcon, MinusSmallIcon } from "@heroicons/react/20/solid";
 interface IntInData {
 	miniature: string,
 	title: string,
 	[propName: string]: any,
 }
-
 interface CarouselProps {
-  inData: IntInData[],
+	inData: IntInData[],
+	inTitle?: boolean,
+	inDotScroll?: boolean,
+	inButtons?: boolean,
+	inAutoPlay?: boolean,
+	inAutoPlayDelay?: number,
 }
 
-export default function Carousel({inData}: CarouselProps): JSX.Element {
+/* TODO :
+	- Scroll au doigt.
+	- Refactoring
+*/
 
-	function changeBackground(e: any) {
-		// e.target!.style.background = "red";
+export default function Carousel({ inData, inTitle = false, inDotScroll = true, inButtons = true, inAutoPlay = true, inAutoPlayDelay = 3000}: CarouselProps): JSX.Element {
+
+	const [index, setIndex] = useState(0);
+	const [nextIdx, setNextIdx] = useState(0);
+	const [prevIdx, setPrevIdx] = useState(0);
+	const [nbProject, setNbProject] = useState(0);
+	const animationDelay = 500;
+
+	const nextSlide = (): void => {
+		document.getElementById("imagesContainer")?.classList.add(css.animFF);
+		setTimeout(() => {
+			setIndex((current) => {
+				if (current === nbProject - 1) {
+					return 0;
+				}
+				return current + 1;
+			})
+		}, animationDelay);
+		setTimeout(() => {
+			document.getElementById("imagesContainer")?.classList.remove(css.animFF);
+		}, animationDelay + 50)
 	}
 
-	function changeBackground2(e: any) {
-		// e.target!.style.background = "rgba(0, 0, 0, 0.5)";
+	const previousSlide = (): void => {
+		document.getElementById("imagesContainer")?.classList.add(css.animFR);
+		setTimeout(() => {
+			setIndex((current) => {
+				if (current === 0) {
+					return nbProject - 1;
+				}
+				return current - 1;
+			})
+		}, animationDelay);
+		setTimeout(() => {
+			document.getElementById("imagesContainer")?.classList.remove(css.animFR);
+		}, animationDelay + 50)
 	}
-  
-	const [rotation, setRotation] = useState<number>(0);
-	const angle = 360/inData.length;
-	const containerImgRef = useRef<HTMLDivElement>(null);
 
-	const changeDeg = (DegToAdd: number) => {
-		setRotation((current) => current + DegToAdd)
+	const goToSlide = (idx: number): void => {
+		setIndex(idx);
 	}
 
-	useEffect(() => {
-		containerImgRef.current!.style.transform = `rotateY(${rotation}deg)`;
-	}, [rotation])
-	
+	useEffect((): () => void => {
+		let timer1: NodeJS.Timer;
+		let timer2: NodeJS.Timer;
+		if(nbProject !== 0) {
+			timer1 = setTimeout(() => {
+				setPrevIdx(() => {
+					if (index - 1 < 0) {
+						return nbProject - 1;
+					}
+					return index - 1;
+				})
+				setNextIdx(() => {
+					if (index + 1 > nbProject - 1) {
+						return 0;
+					}
+					return index + 1;
+				})
+			}, 50)
+			if (inAutoPlay) {
+				timer2 = setTimeout(() => {
+					nextSlide();
+				}, inAutoPlayDelay)
+			}
+		}
+		return (() => {
+			clearTimeout(timer1)
+			clearTimeout(timer2)
+		})
+	}, [index, nbProject])
+
+	useEffect((): void => {
+		setNbProject(inData.length)
+		setIndex(0);
+	}, [inData])
+
 	return (
-		<>
-			<div className={style.container}>
-				<ChevronLeftIcon onMouseEnter={changeBackground} onMouseLeave={changeBackground2} onClick={() => {changeDeg(angle)}} className={`${style.button} ${style.buttonPrev}`} />
-				<ChevronRightIcon onClick={() => {changeDeg(-angle)}} className={`${style.button} ${style.buttonNext}`}/>
-				<div id="carousel" className={style.containerImg} ref={containerImgRef}>
-					{inData.map((el, idx) => {
-						const rotateAngle = angle * idx
-						const tranlateLength = 50 * inData.length //44.5
-						return (
-							<a href={`#${el.title}`} key = {idx} className={style.link} style={{transform: `rotateY(${rotateAngle}deg) translateZ(${tranlateLength}px)`}}>
-								<Image 
-									src = {el.miniature}
-									blurDataURL = {el.miniature}
-									alt = "Capture d'ecran du projet"
-									priority = {true}
-									sizes="50vw"
-									className={style.img}
-									fill
-								/>
-							</a>
-						)})}
+		<div className={css.container}>
+			<div className={css.carousel}>
+				<div id="imagesContainer" className={css.images}>
+					<figure className={css.image}>
+						<Image 
+							src = {inData[prevIdx].miniature}
+							blurDataURL = {inData[prevIdx].miniature}
+							alt = "Capture d'ecran du projet"
+							priority = {true}
+							style={{objectFit: "contain"}}
+							sizes="50vw"
+							fill
+						/>
+					</figure>
+					<figure className={css.image}>
+						<a href={`#${inData[index].title}`}>
+							<Image 
+								src = {inData[index].miniature}
+								blurDataURL = {inData[index].miniature}
+								alt = "Capture d'ecran du projet"
+								priority = {true}
+								style={{objectFit: "contain"}}
+								sizes="50vw"
+								fill
+							/>
+						</a>
+					</figure>
+					<figure className={css.image}>
+						<Image 
+							src = {inData[nextIdx].miniature}
+							blurDataURL = {inData[nextIdx].miniature}
+							alt = "Capture d'ecran du projet"
+							priority = {true}
+							style={{objectFit: "contain"}}
+							sizes="50vw"
+							fill
+						/>
+					</figure>
 				</div>
+				{inDotScroll && <div className={`${css.headband} ${css.dotsScroll}`}>
+					{inData.map((el, idx) => {
+						return <MinusSmallIcon className={idx === index ? `${css.dotScroll} ${css.selected}` : css.dotScroll} key={idx} onClick={() => {goToSlide(idx)}}/>
+					})}
+				</div>}
+				{inButtons && 
+					<>
+						<ChevronLeftIcon  className={`${css.leftArrow} ${css.arrow}`} onClick={previousSlide}/>
+						<ChevronRightIcon className={`${css.rightArrow} ${css.arrow}`} onClick={nextSlide}/>
+					</>}
 			</div>
-		</>
+			{inTitle && <h1 className={css.title}>
+				{inData[index].title}
+			</h1>}
+		</div>
 	)
+
 }

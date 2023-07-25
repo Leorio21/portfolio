@@ -1,63 +1,105 @@
+.headband, .title {
+  --background--color--headband: rgb(221, 221, 221);
+}
+
+@media (prefers-color-scheme: dark) {
+  .headband, .title {
+    --background--color--headband: rgba(0, 0, 0, 0.9);
+  }
+}
+
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.carousel {
   position: relative;
+  height: 450px;
+  width: 300px;
+  border: ridge 2px var(--text--color);
+  overflow: hidden;
+}
+
+.headband {
+  width: 100%;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  font-size: 30px;
+  color: var(--text--color);
+  background-color: var(--background--color--headband);
+}
+
+.title {
   width: 100%;
-  height: 450px;
-  perspective: 950px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 30px;
+  color: var(--text--color--light);
+  background-color: var(--background--color--headband);
 }
 
-.containerImg {
-  transform-style: preserve-3d;
+.dotsScroll {
+  height: 30px;
+  bottom: 0px;
+}
+
+.dotScroll {
+  width: 50px;
+  cursor: pointer;
+}
+
+.selected {
+  fill: red;
+}
+
+.arrow {
   position: absolute;
-  width: 200px;
-  height: 200px;
-  transition: all 2s ease-in-out;
+  fill: white;
+  width: 40px;
+  height: 80px;
+  top: calc(50% - 40px);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 25%;
+  cursor: pointer;
 }
 
-.button {
-  position: fixed;
-  border-radius: 20px;
-  z-index: 3;
-  top: -50px;
-  width: 150px;
-  height: 200px;
-  transition: all 2s ease-in-out;
+.leftArrow {
+  left: -5px;
 }
 
-.buttonPrev {
-  left: 0px;
+.rightArrow {
+  right: -5px;
 }
 
-.buttonNext {
-  right: 0px;
-}
-
-.link {
-  border: 3px outset white;
-  position: absolute;
-  width: 100%;
+.images {
+  position: relative;
+  width: 900px;
   height: 100%;
-  top: 0px;
+  display: flex;
+  justify-content: center;
+  transform: translateX(-302px);
 }
 
-.img {
-  object-fit: cover;
+.image {
+  position: relative;
+  width: 300px;
+  height: 100%;
 }
 
-@media (width > 700px) {
-  .button {
-    top: calc(50% - 100px);
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+.animFF {
+  transform: translateX(-602px);
+  transition: all 0.5s ease-in-out;
+}
 
-  .containerImg {
-    width: 300px;
-    height: 300px;
-  }
-
-  .img {
-    object-fit: cover;
-  }
+.animFR {
+  transform: translateX(-2px);
+  transition: all 0.5s ease-in-out;
 }

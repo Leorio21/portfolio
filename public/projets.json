@@ -28,13 +28,6 @@
     "site": "https://portfolio-leorio21.vercel.app/"
   },
   {
-    "title": "Carrousel - WIP",
-    "miniature": "/carousel/Carrousel.webp",
-    "description": "Carrousel photo avec effet 3D\n\nTechologies utilisées:\n\n- NextJS - TypeScript - CSS",
-    "code": "https://github.com/Leorio21/carousel",
-    "site": "https://carousel-omega.vercel.app/"
-  },
-  {
     "title": "Compteur - WIP",
     "miniature": "/carousel/Compteur.webp",
     "description": "Compteur avec pales tournantes avec effet 3D\n\nTechologies utilisées:\n\n- HTML - CSS - JS",
